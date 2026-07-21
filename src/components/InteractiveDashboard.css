@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Fira+Code:wght@500;700&display=swap');
+
+.solum-demo-wrapper {
+  --bg-carbon: #191E22;
+  --bg-darker: #0b0d0f;
+  --naranja-industrial: #FF5C1A;
+  --naranja-hover: #e65215;
+  --cian-electrico: #00B4D8;
+  --blanco-puro: #FFFFFF;
+  --gris-claro: #A0AAB2;
+  --fuente-ui: 'Inter', system-ui, sans-serif;
+  --fuente-datos: 'Fira Code', monospace;
+
+  background-color: var(--bg-darker);
+  color: var(--blanco-puro);
+  font-family: var(--fuente-ui);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8rem 2rem;
+  box-sizing: border-box;
+}
+
+.solum-demo-wrapper * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.solum-demo-section {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  max-width: 900px;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .solum-demo-section {
+    flex-direction: row;
+    align-items: center;
+    max-width: 1200px;
+  }
+}
+
+.solum-copy {
+  flex: 1;
+  max-width: 500px;
+}
+
+.solum-badge {
+  display: inline-block;
+  color: var(--cian-electrico);
+  background: rgba(0, 180, 216, 0.1);
+  border: 1px solid rgba(0, 180, 216, 0.3);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.solum-copy h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  letter-spacing: -1px;
+}
+
+.solum-copy h2 span {
+  color: var(--naranja-industrial);
+}
+
+.solum-copy p {
+  color: var(--gris-claro);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.solum-panel-wrapper {
+  flex: 1.2;
+  width: 100%;
+  position: relative;
+}
+
+.solum-panel {
+  background-color: var(--bg-carbon);
+  border: 1px solid rgba(0, 180, 216, 0.2);
+  border-radius: 12px;
+  width: 100%;
+  box-shadow: 0 20px 40px rgba(0,0,0, 0.8), 0 0 30px rgba(0, 180, 216, 0.05);
+  overflow: hidden;
+  position: relative;
+  transition: box-shadow 0.4s ease;
+}
+
+.solum-panel.processing {
+  box-shadow: 0 20px 40px rgba(0,0,0, 0.8), 0 0 50px rgba(0, 180, 216, 0.2);
+  border-color: var(--cian-electrico);
+}
+
+.scan-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--cian-electrico);
+  box-shadow: 0 0 15px var(--cian-electrico), 0 0 30px var(--cian-electrico);
+  opacity: 0;
+  z-index: 10;
+}
+
+.solum-panel.processing .scan-line {
+  opacity: 1;
+  animation: scan 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes scan {
+  0% { top: 0; opacity: 1; }
+  90% { top: 100%; opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+.solum-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid rgba(255,255,255, 0.05);
+  background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, transparent 100%);
+}
+
+.solum-title h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.solum-title p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--gris-claro);
+  margin-top: 4px;
+}
+
+.solum-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--cian-electrico);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.solum-status .dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--cian-electrico);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--cian-electrico);
+  animation: pulse 2s infinite;
+}
+
+.solum-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.solum-card {
+  background: rgba(255,255,255, 0.02);
+  border: 1px solid rgba(255,255,255, 0.05);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.solum-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 180, 216, 0.3);
+  background: rgba(0, 180, 216, 0.02);
+}
+
+.solum-card h4 {
+  margin: 0;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: var(--gris-claro);
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.solum-data {
+  font-family: var(--fuente-datos);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  transition: color 0.5s ease;
+}
+
+.solum-data.warning { color: var(--naranja-industrial); }
+.solum-data.ok { color: var(--cian-electrico); }
+.solum-data.neutral { color: var(--blanco-puro); }
+
+.solum-subtext {
+  font-size: 0.8rem;
+  color: var(--gris-claro);
+  margin-top: 8px;
+  display: block;
+  min-height: 1.2rem;
+}
+
+.solum-action-row {
+  padding: 1.5rem 2rem;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255,255,255, 0.05);
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.action-text {
+  font-size: 0.9rem;
+  color: var(--gris-claro);
+  flex: 1;
+  min-width: 200px;
+}
+
+.action-text strong {
+  color: var(--blanco-puro);
+}
+
+.btn-solum {
+  background-color: var(--naranja-industrial);
+  color: var(--blanco-puro);
+  border: none;
+  padding: 12px 24px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-solum:hover {
+  background-color: var(--naranja-hover);
+  box-shadow: 0 4px 15px rgba(255, 92, 26, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-solum.loading {
+  background-color: var(--gris-claro);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  color: var(--bg-carbon);
+}
+
+.btn-solum.success {
+  background-color: var(--cian-electrico);
+  box-shadow: 0 4px 15px rgba(0, 180, 216, 0.4);
+  color: var(--bg-carbon);
+}
+
+.btn-icon {
+  transition: transform 0.3s;
+}
+
+.btn-solum.loading .btn-icon {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+  to { opacity: 1; transform: translateY(0); }
+}

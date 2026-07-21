@@ -1,0 +1,497 @@
+
+<style data-kid="0">
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&display=swap');
+    @import url('https://cdn.jsdelivr.net/npm/@tabler/icons-webfont/tabler-icons.min.css');
+    @import url('https://unpkg.com/lenis@1/dist/lenis.css');
+
+    :root {
+        --onyx: #111111;
+        --carbon: #1B1B1B;
+        --flame: #FF4F00;
+        --platinum: #F2F3F4;
+    }
+
+    .solum-container {
+        background-color: var(--onyx);
+        color: var(--platinum);
+        font-family: 'JetBrains Mono', monospace;
+        min-height: 100vh;
+        overflow-x: clip;
+    }
+
+    .font-heading { font-family: 'Space Grotesk', sans-serif; }
+
+    .text-stroke {
+        -webkit-text-stroke: 1px rgba(242, 243, 244, 0.3);
+        color: transparent;
+    }
+
+    .grid-paper-bg {
+        background-image: 
+            linear-gradient(rgba(242, 243, 244, 0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(242, 243, 244, 0.05) 1px, transparent 1px);
+        background-size: 40px 40px;
+    }
+
+    .halftone-overlay {
+        background-image: radial-gradient(circle, var(--platinum) 1px, transparent 1px);
+        background-size: 8px 8px;
+        opacity: 0.1;
+        pointer-events: none;
+    }
+
+    .brutalist-border {
+        border: 3px solid var(--flame);
+        box-shadow: 6px 6px 0px 0px rgba(255, 79, 0, 0.2);
+    }
+
+    .blueprint-line {
+        background: linear-gradient(90deg, transparent, var(--flame), transparent);
+        height: 1px;
+        width: 100%;
+        opacity: 0.2;
+    }
+
+    /* Terminal Noise Style */
+    .terminal-noise {
+        font-size: 8px;
+        color: rgba(242, 243, 244, 0.1);
+        pointer-events: none;
+    }
+
+    .blueprint-node {
+        border: 1px dashed rgba(255, 79, 0, 0.3);
+        padding: 1rem;
+        position: relative;
+    }
+
+    .blueprint-node::after {
+        content: '';
+        position: absolute;
+        top: -4px; left: -4px; width: 8px; height: 8px;
+        background: var(--flame);
+    }
+
+    .blueprint-crosshair {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border: 1px solid var(--flame);
+        opacity: 0.3;
+    }
+
+    .nav-glow:hover {
+        filter: drop-shadow(0 0 8px var(--flame));
+        color: var(--flame);
+    }
+</style>
+<div class="solum-container selection:bg-[var(--flame)] selection:text-white" data-kid="1">
+
+<nav class="fixed left-0 top-0 h-screen w-[80px] bg-[var(--onyx)] border-r border-[var(--platinum)]/10 flex flex-col items-center py-8 z-50" data-kid="1-1" data-name="navigation sidebar" id="icon-rail">
+<div class="mb-12" data-kid="1-1-1" data-name="navigation logo container">
+<svg data-kid="1-1-1-1" fill="none" height="40" viewbox="0 0 40 40" width="40" xmlns="http://www.w3.org/2000/svg">
+<path d="M20 5L32 12V28L20 35L8 28V12L20 5Z" stroke="#FF4F00" stroke-width="2" data-kid="2"></path>
+<path d="M20 5L32 12L20 19L8 12L20 5Z" fill="#FF4F00" fill-opacity="0.3" stroke="#FF4F00" data-kid="3"></path>
+<path d="M20 19V35" stroke="#FF4F00" stroke-width="1" data-kid="4"></path>
+<text fill="#FF4F00" font-family="Space Grotesk" font-size="12" font-weight="900" x="14" y="27" data-kid="5">SF</text>
+</svg>
+</div>
+<div class="flex flex-col gap-8 flex-1" data-kid="1-1-2" data-name="navigation link group">
+<a class="text-[var(--platinum)]/40 nav-glow transition-all text-2xl" data-kid="1-1-2-1" data-name="terminal icon link" href="#" title="Console"><i class="ti ti-terminal-2" data-kid="1-1-2-1-1"></i></a>
+<a class="text-[var(--platinum)]/40 nav-glow transition-all text-2xl" data-kid="1-1-2-2" data-name="schema icon link" href="#" title="Schema"><i class="ti ti-schema" data-kid="1-1-2-2-1"></i></a>
+<a class="text-[var(--platinum)]/40 nav-glow transition-all text-2xl" data-kid="1-1-2-3" data-name="box model icon link" href="#" title="Architecture"><i class="ti ti-box-model-2" data-kid="1-1-2-3-1"></i></a>
+<a class="text-[var(--platinum)]/40 nav-glow transition-all text-2xl" data-kid="1-1-2-4" data-name="bug icon link" href="#" title="Debug"><i class="ti ti-bug" data-kid="1-1-2-4-1"></i></a>
+</div>
+<div class="mt-auto" data-kid="1-1-3" data-name="whatsapp contact button container">
+<a class="w-12 h-12 rounded-full bg-[var(--flame)] flex items-center justify-center text-white text-2xl hover:scale-110 transition-transform shadow-[0_0_20px_rgba(255,79,0,0.4)]" data-kid="1-1-3-1" data-name="whatsapp contact button" href="https://wa.me/yournumber" target="_blank">
+<i class="ti ti-brand-whatsapp" data-kid="1-1-3-1-1"></i>
+</a>
+</div>
+</nav>
+<main class="ml-[80px]" data-kid="1-2" data-name="main content container">
+
+<section class="min-h-screen flex flex-col justify-center px-12 md:px-24 py-20 relative overflow-hidden" data-kid="1-2-1" data-name="hero section" id="hero">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] opacity-[0.02] pointer-events-none select-none overflow-hidden" data-kid="1-2-1-1" data-name="hero background watermark container">
+<div class="text-[40rem] font-black text-[var(--platinum)] leading-none rotate-12" data-kid="1-2-1-1-1" data-name="hero background watermark text">FACTORY</div>
+</div>
+<div class="w-full max-w-5xl brutalist-border bg-[var(--carbon)] overflow-hidden mb-16 relative z-10" data-kid="1-2-1-2" data-name="terminal command line interface container" id="terminal-cli">
+<div class="bg-[var(--onyx)] border-b border-[var(--flame)]/50 px-4 py-2 flex items-center justify-between" data-kid="1-2-1-2-1" data-name="terminal top bar">
+<div class="flex gap-2" data-kid="1-2-1-2-1-1" data-name="terminal status dots container">
+<div class="w-3 h-3 rounded-full bg-[var(--flame)]" data-kid="1-2-1-2-1-1-1" data-name="terminal dot red"></div>
+<div class="w-3 h-3 rounded-full bg-[var(--flame)]/40" data-kid="1-2-1-2-1-1-2" data-name="terminal dot yellow"></div>
+<div class="w-3 h-3 rounded-full bg-[var(--flame)]/20" data-kid="1-2-1-2-1-1-3" data-name="terminal dot green"></div>
+</div>
+<div class="text-[var(--platinum)]/40 text-[10px] uppercase tracking-widest font-mono" data-kid="1-2-1-2-1-2" data-name="terminal version title text">solum_terminal_v4.0.0-industrial</div>
+<div class="flex gap-4" data-kid="1-2-1-2-1-3" data-name="terminal CPU/RAM info container">
+<span class="text-[var(--platinum)]/20 text-[8px] font-mono" data-kid="1-2-1-2-1-3-1" data-name="CPU load text">CPU: 42%</span>
+<span class="text-[var(--platinum)]/20 text-[8px] font-mono" data-kid="1-2-1-2-1-3-2" data-name="RAM usage text">RAM: 1.2GB</span>
+</div>
+</div>
+<div class="p-10 font-mono" data-kid="1-2-1-2-2" data-name="terminal output content area">
+<div class="flex items-center gap-3 mb-6" data-kid="1-2-1-2-2-1" data-name="typewriter line container">
+<span class="text-[var(--flame)] font-bold text-2xl animate-pulse" data-kid="1-2-1-2-2-1-1" data-name="terminal prompt symbol">SOLUM &gt;</span>
+<span class="text-3xl md:text-5xl font-bold tracking-tighter text-[var(--platinum)]" data-dynamic="true" data-kid="1-2-1-2-2-1-2" data-name="typewriter text element" data-reason="text content typed dynamically by script on load" id="hero-typewriter"></span>
+<span class="w-3 h-10 md:h-14 bg-[var(--flame)] animate-pulse" data-kid="1-2-1-2-2-1-3" data-name="cursor blinker"></span>
+</div>
+<div class="opacity-0 hero-content-reveal" data-kid="1-2-1-2-2-2" data-name="hero content reveal container">
+<p class="text-[var(--platinum)]/80 text-lg md:text-xl max-w-2xl mb-12 leading-relaxed border-l-2 border-[var(--flame)] pl-6" data-kid="1-2-1-2-2-2-1" data-name="hero description text">
+                            Deploying resilient, high-throughput architectures for industrial SME operations. We replace chaos with deterministic software pipelines.
+                        </p>
+<div class="flex flex-wrap items-center gap-8" data-kid="1-2-1-2-2-2-2" data-name="cta group">
+<button class="bg-[var(--flame)] text-white px-10 py-5 font-black uppercase tracking-[0.2em] hover:bg-[var(--platinum)] hover:text-[var(--onyx)] transition-all duration-300 flex items-center gap-4 group" data-kid="1-2-1-2-2-2-2-1" data-name="initiate protocol call-to-action button">
+<span class="text-xs opacity-50 font-mono" data-kid="1-2-1-2-2-2-2-1-1" data-name="shell script label">sh</span>
+                                ./initiate_contact
+                                <i class="ti ti-chevron-right group-hover:translate-x-1 transition-transform" data-kid="1-2-1-2-2-2-2-1-2" data-name="right chevron icon"></i>
+</button>
+<div class="flex flex-col" data-kid="1-2-1-2-2-2-2-2" data-name="status log container">
+<span class="text-[var(--flame)] text-[10px] font-bold uppercase tracking-widest mb-1" data-kid="1-2-1-2-2-2-2-2-1" data-name="status log label">// STATUS_LOG</span>
+<div class="flex items-center gap-2 text-[var(--platinum)]/40 text-xs font-mono" data-kid="1-2-1-2-2-2-2-2-2" data-name="status indicator">
+<div class="w-2 h-2 rounded-full bg-green-500 animate-ping" data-kid="1-2-1-2-2-2-2-2-2-1" data-name="status ping indicator"></div>
+                                    CORE_LOAD_READY
+                                </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="hero-subtext opacity-0 hero-content-reveal relative z-10 flex flex-col md:flex-row items-baseline gap-8" data-kid="1-2-1-3" data-name="hero subtext section">
+<h1 class="text-7xl md:text-[11rem] font-black leading-[0.75] uppercase tracking-tighter font-heading" data-kid="1-2-1-3-1" data-name="hero headline text">
+                    SYSTEMS<br data-kid="1-2-1-3-1-1" data-name="hero headline text part 1"><span class="text-[var(--flame)]" data-kid="1-2-1-3-1-2" data-name="hero headline text part 2">REWIRED.</span>
+</h1>
+<div class="text-[var(--platinum)]/30 text-xs font-mono max-w-[200px] leading-loose uppercase tracking-[0.1em]" data-kid="1-2-1-3-2" data-name="hero geolocation and info text">
+                    [41.8781° N, 87.6298° W]<br data-kid="1-2-1-3-2-1" data-name="info text line break">
+                    BUILDING THE NEXT GENERATION OF INDUSTRIAL INTERFACES.
+                </div>
+</div>
+</section>
+
+<section class="min-h-screen grid grid-cols-1 md:grid-cols-2 grid-rows-2 border-t border-[var(--platinum)]/10 bg-[var(--onyx)] relative" data-kid="1-2-2" data-name="problem quadrants section" id="quadrants">
+<div class="border-r border-b border-[var(--platinum)]/10 p-12 md:p-24 flex flex-col justify-end group cursor-crosshair hover:bg-[var(--carbon)] transition-colors duration-500 relative overflow-hidden" data-kid="1-2-2-1" data-name="data silos quadrant">
+<div class="terminal-noise absolute top-4 left-4 font-mono leading-none bg-[var(--onyx)]/80 p-1" data-kid="1-2-2-1-1" data-name="data silos log info">
+                    LOG_0X01: DATA_INTEGRITY_ERR<br data-kid="1-2-2-1-1-1" data-name="data silos log line 1">TIMESTAMP: 1723910239<br data-kid="1-2-2-1-1-2" data-name="data silos log line 2">HEX: FF 43 12 A1 09
+                </div>
+<div class="text-[var(--flame)] text-xs mb-4 tracking-[0.3em] font-bold font-mono" data-kid="1-2-2-1-2" data-name="data silos segment label">SEGMENT_01</div>
+<h3 class="text-5xl md:text-7xl text-[var(--platinum)] font-black uppercase tracking-tighter mb-6 scramble-trigger font-heading" data-dynamic="true" data-kid="1-2-2-1-3" data-name="data silos title" data-reason="text scrambled/reinitialized on hover by script" data-scramble="DATA SILOS">DATA SILOS</h3>
+<p class="text-[var(--platinum)]/50 max-w-sm font-mono text-base leading-relaxed" data-kid="1-2-2-1-4" data-name="data silos description text">
+                    Intelligence trapped in isolated sheets. We rebuild the neural pathways of your business.
+                </p>
+<div class="mt-8 h-1 w-0 group-hover:w-full bg-[var(--flame)] transition-all duration-700" data-kid="1-2-2-1-5" data-name="hover underline indicator"></div>
+</div>
+<div class="border-b border-[var(--platinum)]/10 p-12 md:p-24 flex flex-col justify-end group cursor-crosshair hover:bg-[var(--carbon)] transition-colors duration-500 relative overflow-hidden" data-kid="1-2-2-2" data-name="offline failure quadrant">
+<div class="terminal-noise absolute top-4 left-4 font-mono leading-none" data-kid="1-2-2-2-1" data-name="offline failure log info">
+                    LOG_0X02: NET_RECOVERY_FAIL<br data-kid="1-2-2-2-1-1" data-name="offline failure log line 1">MTBF: 12.4H<br data-kid="1-2-2-2-1-2" data-name="offline failure log line 2">STATE: UNSTABLE
+                </div>
+<div class="text-[var(--flame)] text-xs mb-4 tracking-[0.3em] font-bold font-mono" data-kid="1-2-2-2-2" data-name="offline failure segment label">SEGMENT_02</div>
+<h3 class="text-5xl md:text-7xl text-[var(--platinum)] font-black uppercase tracking-tighter mb-6 scramble-trigger font-heading" data-dynamic="true" data-kid="1-2-2-2-3" data-name="offline failure title" data-reason="text scrambled/reinitialized on hover by script" data-scramble="OFFLINE FAILURE">OFFLINE FAILURE</h3>
+<p class="text-[var(--platinum)]/50 max-w-sm font-mono text-base leading-relaxed" data-kid="1-2-2-2-4" data-name="offline failure description text">
+                    Downtime is a casualty of poor architecture. Our offline-first engine guarantees continuity.
+                </p>
+<div class="mt-8 h-1 w-0 group-hover:w-full bg-[var(--flame)] transition-all duration-700" data-kid="1-2-2-2-5" data-name="hover underline indicator"></div>
+</div>
+<div class="border-r border-[var(--platinum)]/10 p-12 md:p-24 flex flex-col justify-end group cursor-crosshair hover:bg-[var(--carbon)] transition-colors duration-500 relative overflow-hidden" data-kid="1-2-2-3" data-name="frictional UI quadrant">
+<div class="terminal-noise absolute top-4 left-4 font-mono leading-none" data-kid="1-2-2-3-1" data-name="frictional UI log info">
+                    LOG_0X03: UX_FRICTION_ALARM<br data-kid="1-2-2-3-1-1" data-name="frictional UI log line 1">MAN_HOURS_LOST: 1400/MO<br data-kid="1-2-2-3-1-2" data-name="frictional UI log line 2">KPI: RED
+                </div>
+<div class="text-[var(--flame)] text-xs mb-4 tracking-[0.3em] font-bold font-mono" data-kid="1-2-2-3-2" data-name="frictional UI segment label">SEGMENT_03</div>
+<h3 class="text-5xl md:text-7xl text-[var(--platinum)] font-black uppercase tracking-tighter mb-6 scramble-trigger font-heading" data-dynamic="true" data-kid="1-2-2-3-3" data-name="frictional UI title" data-reason="text scrambled/reinitialized on hover by script" data-scramble="FRICTIONAL UI">FRICTIONAL UI</h3>
+<p class="text-[var(--platinum)]/50 max-w-sm font-mono text-base leading-relaxed" data-kid="1-2-2-3-4" data-name="frictional UI description text">
+                    Software shouldn't be a hurdle. We craft interfaces that respond as fast as thought.
+                </p>
+<div class="mt-8 h-1 w-0 group-hover:w-full bg-[var(--flame)] transition-all duration-700" data-kid="1-2-2-3-5" data-name="hover underline indicator"></div>
+</div>
+<div class="p-12 md:p-24 flex flex-col justify-end group cursor-crosshair hover:bg-[var(--carbon)] transition-colors duration-500 relative overflow-hidden" data-kid="1-2-2-4" data-name="blind scaling quadrant">
+<div class="terminal-noise absolute top-4 left-4 font-mono leading-none" data-kid="1-2-2-4-1" data-name="blind scaling log info">
+                    LOG_0X04: SCALE_OVERLOAD<br data-kid="1-2-2-4-1-1" data-name="blind scaling log line 1">DATA_SYNC: NULL<br data-kid="1-2-2-4-1-2" data-name="blind scaling log line 2">VERSION: ALPHA
+                </div>
+<div class="text-[var(--flame)] text-xs mb-4 tracking-[0.3em] font-bold font-mono" data-kid="1-2-2-4-2" data-name="blind scaling segment label">SEGMENT_04</div>
+<h3 class="text-5xl md:text-7xl text-[var(--platinum)] font-black uppercase tracking-tighter mb-6 scramble-trigger font-heading" data-dynamic="true" data-kid="1-2-2-4-3" data-name="blind scaling title" data-reason="text scrambled/reinitialized on hover by script" data-scramble="BLIND SCALING">BLIND SCALING</h3>
+<p class="text-[var(--platinum)]/50 max-w-sm font-mono text-base leading-relaxed" data-kid="1-2-2-4-4" data-name="blind scaling description text">
+                    Scaling on intuition is a risk. We provide the telemetry needed for aggressive growth.
+                </p>
+<div class="mt-8 h-1 w-0 group-hover:w-full bg-[var(--flame)] transition-all duration-700" data-kid="1-2-2-4-5" data-name="hover underline indicator"></div>
+</div>
+</section>
+
+<section class="py-32 md:py-48 px-12 md:px-24 bg-[var(--onyx)]" data-kid="1-2-3" data-name="capability ledger section" id="capability-ledger">
+<div class="max-w-6xl mx-auto" data-kid="1-2-3-1" data-name="capability ledger inner container">
+<div class="flex flex-col md:flex-row justify-between items-baseline mb-24 gap-8" data-kid="1-2-3-1-1" data-name="capability ledger title group">
+<p class="text-6xl md:text-9xl font-black text-[var(--platinum)] uppercase tracking-tighter leading-[0.8] font-heading" data-kid="1-2-3-1-1-1" data-name="capability ledger headline">
+                        SYSTEMIC<br data-kid="1-2-3-1-1-1-1" data-name="ledger headline part 1"><span class="text-[var(--flame)]" data-kid="1-2-3-1-1-1-2" data-name="ledger headline part 2">RECOVERY.</span>
+</p>
+<div class="md:max-w-xs text-[var(--platinum)]/60 font-mono text-sm leading-relaxed border-t border-[var(--flame)] pt-4 uppercase" data-kid="1-2-3-1-1-2" data-name="capability ledger description text">
+                        Our capabilities are engineered as modular primitives. Solid, reliable, and production-ready.
+                    </div>
+</div>
+<div class="border-t border-[var(--platinum)]/20" data-kid="1-2-3-1-2" data-name="ledger row list container">
+<div class="ledger-row border-b border-[var(--platinum)]/20 py-16 grid grid-cols-1 md:grid-cols-12 items-center gap-12 group hover:bg-[var(--carbon)] transition-colors px-6" data-kid="1-2-3-1-2-1" data-name="capability ledger row 1">
+<div class="md:col-span-1 text-[var(--flame)] font-bold font-mono text-xl" data-kid="1-2-3-1-2-1-1" data-name="ledger row 1 index">01</div>
+<div class="md:col-span-4 text-4xl font-black uppercase font-heading group-hover:translate-x-6 transition-transform duration-500" data-kid="1-2-3-1-2-1-2" data-name="ledger row 1 title">Offline-First Sync</div>
+<div class="md:col-span-5 text-[var(--platinum)]/70 font-mono text-base leading-relaxed" data-kid="1-2-3-1-2-1-3" data-name="ledger row 1 description">Zero-downtime architecture. Data persists locally and merges seamlessly when sync is available. Bi-directional integrity guaranteed.</div>
+<div class="md:col-span-2 md:text-right font-black text-[var(--flame)] font-mono text-xl" data-kid="1-2-3-1-2-1-4" data-name="ledger row 1 stat">100% RELIABLE</div>
+</div>
+<div class="ledger-row border-b border-[var(--platinum)]/20 py-16 grid grid-cols-1 md:grid-cols-12 items-center gap-12 group hover:bg-[var(--carbon)] transition-colors px-6" data-kid="1-2-3-1-2-2" data-name="capability ledger row 2">
+<div class="md:col-span-1 text-[var(--flame)] font-bold font-mono text-xl" data-kid="1-2-3-1-2-2-1" data-name="ledger row 2 index">02</div>
+<div class="md:col-span-4 text-4xl font-black uppercase font-heading group-hover:translate-x-6 transition-transform duration-500" data-kid="1-2-3-1-2-2-2" data-name="ledger row 2 title">Premium Operations</div>
+<div class="md:col-span-5 text-[var(--platinum)]/70 font-mono text-base leading-relaxed" data-kid="1-2-3-1-2-2-3" data-name="ledger row 2 description">High-ink ratio interfaces designed for precision. No clutter, only critical operational data and accelerated action paths.</div>
+<div class="md:col-span-2 md:text-right font-black text-[var(--flame)] font-mono text-xl" data-kid="1-2-3-1-2-2-4" data-name="ledger row 2 stat">-45% LATENCY</div>
+</div>
+<div class="ledger-row border-b border-[var(--platinum)]/20 py-16 grid grid-cols-1 md:grid-cols-12 items-center gap-12 group hover:bg-[var(--carbon)] transition-colors px-6" data-kid="1-2-3-1-2-3" data-name="capability ledger row 3">
+<div class="md:col-span-1 text-[var(--flame)] font-bold font-mono text-xl" data-kid="1-2-3-1-2-3-1" data-name="ledger row 3 index">03</div>
+<div class="md:col-span-4 text-4xl font-black uppercase font-heading group-hover:translate-x-6 transition-transform duration-500" data-kid="1-2-3-1-2-3-2" data-name="ledger row 3 title">Practical Intelligence</div>
+<div class="md:col-span-5 text-[var(--platinum)]/70 font-mono text-base leading-relaxed" data-kid="1-2-3-1-2-3-3" data-name="ledger row 3 description">AI deployed as a utility, not a gimmick. Automated decision support and predictive analytics baked into the core engine.</div>
+<div class="md:col-span-2 md:text-right font-black text-[var(--flame)] font-mono text-xl" data-kid="1-2-3-1-2-3-4" data-name="ledger row 3 stat">3X VELOCITY</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-32 md:py-48 bg-[var(--carbon)] relative overflow-hidden" data-kid="1-2-4" data-name="blueprint section" id="blueprint">
+<div class="grid-paper-bg absolute inset-0 opacity-20" data-kid="1-2-4-1" data-name="grid background"></div>
+<div class="absolute inset-0 opacity-[0.03] bg-[repeating-linear-gradient(90deg,var(--flame),var(--flame)_1px,transparent_1px,transparent_100px)]" data-kid="1-2-4-2" data-name="overlay pattern"></div>
+<div class="relative z-10 max-w-7xl mx-auto px-12 md:px-24" data-kid="1-2-4-3" data-name="blueprint inner container">
+
+<div class="blueprint-crosshair -top-2 -left-2" data-kid="1-2-4-3-1" data-name="blueprint header section"></div>
+<div class="blueprint-crosshair -bottom-2 -right-2" data-kid="1-2-4-3-2" data-name="blueprint bottom right marker"></div>
+<div class="grid grid-cols-12 gap-8 items-start" data-kid="1-2-4-3-3" data-name="blueprint column layout">
+<div class="col-span-12 md:col-span-4 mb-20" data-kid="1-2-4-3-3-1" data-name="blueprint header headline group">
+<h2 class="text-6xl md:text-8xl font-black text-[var(--platinum)] uppercase tracking-tighter font-heading mb-8" data-kid="1-2-4-3-3-1-1" data-name="blueprint section title">STACK<br data-kid="1-2-4-3-3-1-1-1" data-name="blueprint section title break">MAP.</h2>
+<p class="text-[var(--flame)] font-bold text-xs uppercase tracking-[0.5em] mb-12 font-mono" data-kid="1-2-4-3-3-1-2" data-name="blueprint schematic label">// SCHEMATIC_04.1</p>
+<div class="space-y-4" data-kid="1-2-4-3-3-1-3" data-name="blueprint tech list">
+<div class="flex items-center gap-4 text-[var(--platinum)]/40 text-xs" data-kid="1-2-4-3-3-1-3-1" data-name="tech item 1 container">
+<div class="w-2 h-2 bg-[var(--flame)]" data-kid="1-2-4-3-3-1-3-1-1" data-name="tech item 1 bullet"></div>
+                                FRONTEND ENGINE: REACT_V18
+                            </div>
+<div class="flex items-center gap-4 text-[var(--platinum)]/40 text-xs" data-kid="1-2-4-3-3-1-3-2" data-name="tech item 2 container">
+<div class="w-2 h-2 bg-[var(--flame)]" data-kid="1-2-4-3-3-1-3-2-1" data-name="tech item 2 bullet"></div>
+                                BACKEND CORE: NODE_RUNTIME
+                            </div>
+<div class="flex items-center gap-4 text-[var(--platinum)]/40 text-xs" data-kid="1-2-4-3-3-1-3-3" data-name="tech item 3 container">
+<div class="w-2 h-2 bg-[var(--flame)]" data-kid="1-2-4-3-3-1-3-3-1" data-name="tech item 3 bullet"></div>
+                                DATA PERISTENCE: POSTGRES_L6
+                            </div>
+</div>
+</div>
+<div class="col-span-12 md:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8" data-kid="1-2-4-3-3-2" data-name="blueprint grid container">
+<div class="blueprint-card col-span-2 md:col-span-2 row-span-2 border border-[var(--flame)]/50 p-12 bg-[var(--onyx)]/50 relative group" data-kid="1-2-4-3-3-2-1" data-name="core react card">
+<div class="absolute top-2 right-2 text-[var(--flame)]/20 text-[8px] font-mono" data-kid="1-2-4-3-3-2-1-1" data-name="card noise label">NODE_01_PRIMARY</div>
+<div class="text-5xl font-black text-[var(--platinum)] mb-4 font-heading" data-kid="1-2-4-3-3-2-1-2" data-name="core react title">CORE_REACT</div>
+<p class="text-[var(--platinum)]/40 text-xs font-mono mb-8 uppercase" data-kid="1-2-4-3-3-2-1-3" data-name="core react description">Scalable component architecture with custom state orchestration.</p>
+<div class="flex gap-2" data-kid="1-2-4-3-3-2-1-4" data-name="core react tags container">
+<span class="bg-[var(--flame)]/10 text-[var(--flame)] px-2 py-1 text-[8px]" data-kid="1-2-4-3-3-2-1-4-1" data-name="tag spa">SPA</span>
+<span class="bg-[var(--flame)]/10 text-[var(--flame)] px-2 py-1 text-[8px]" data-kid="1-2-4-3-3-2-1-4-2" data-name="tag virtual dom">VIRTUAL_DOM</span>
+</div>
+</div>
+<div class="blueprint-card border border-[var(--flame)]/30 p-8 bg-[var(--onyx)] relative group" data-kid="1-2-4-3-3-2-2" data-name="supabase card">
+<div class="absolute -top-1 -left-1 w-2 h-2 bg-[var(--flame)]" data-kid="1-2-4-3-3-2-2-1" data-name="card top accent"></div>
+<div class="text-2xl font-black text-[var(--platinum)] mb-2 font-heading" data-kid="1-2-4-3-3-2-2-2" data-name="supabase title">SUPABASE</div>
+<div class="h-[1px] bg-[var(--flame)]/20 w-full mb-4" data-kid="1-2-4-3-3-2-2-3" data-name="line separator"></div>
+<div class="text-[var(--platinum)]/50 text-[9px] font-mono" data-kid="1-2-4-3-3-2-2-4" data-name="supabase meta text">PG_SQL // REALTIME_V3</div>
+</div>
+<div class="blueprint-card border border-[var(--flame)]/30 p-8 bg-[var(--onyx)] relative group" data-kid="1-2-4-3-3-2-3" data-name="python card">
+<div class="text-2xl font-black text-[var(--platinum)] mb-2 font-heading" data-kid="1-2-4-3-3-2-3-1" data-name="python title">PYTHON</div>
+<div class="h-[1px] bg-[var(--flame)]/20 w-full mb-4" data-kid="1-2-4-3-3-2-3-2" data-name="line separator"></div>
+<div class="text-[var(--platinum)]/30 text-[9px] font-mono" data-kid="1-2-4-3-3-2-3-3" data-name="python meta text">AI_MODELS // DATA</div>
+</div>
+<div class="blueprint-card border border-[var(--flame)]/30 p-8 bg-[var(--onyx)] relative group" data-kid="1-2-4-3-3-2-4" data-name="node.js card">
+<div class="text-2xl font-black text-[var(--platinum)] mb-2 font-heading" data-kid="1-2-4-3-3-2-4-1" data-name="node.js title">NODE.JS</div>
+<div class="h-[1px] bg-[var(--flame)]/20 w-full mb-4" data-kid="1-2-4-3-3-2-4-2" data-name="line separator"></div>
+<div class="text-[var(--platinum)]/30 text-[9px] font-mono" data-kid="1-2-4-3-3-2-4-3" data-name="node.js meta text">RUNTIME // ASYNC</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-32 md:py-64 relative bg-[var(--onyx)]" data-kid="1-2-5" data-name="success case section" id="success-case">
+<div class="max-w-6xl mx-auto px-12 md:px-24" data-kid="1-2-5-1" data-name="success case container">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center" data-kid="1-2-5-1-1" data-name="success case grid">
+<div class="md:col-span-5 relative group bakery-image-wrap" data-kid="1-2-5-1-1-1" data-name="bakery image wrapper">
+<div class="absolute -inset-4 border-2 border-[var(--flame)]/30 translate-x-4 translate-y-4 group-hover:translate-x-6 group-hover:translate-y-6 transition-transform" data-kid="1-2-5-1-1-1-1" data-name="bakery image border decoration"></div>
+<div class="relative aspect-[4/5] overflow-hidden grayscale contrast-125" data-kid="1-2-5-1-1-1-2" data-name="bakery image container">
+<img alt="Industrial Bakery Equipment" class="w-full h-full object-cover" data-kid="1-2-5-1-1-1-2-1" data-name="bakery equipment photo" decoding="async" loading="lazy" src="https://images.unsplash.com/photo-1684261421756-ef07becdf00c?auto=format&amp;w=800&amp;q=80&amp;fit=crop">
+<div class="halftone-overlay absolute inset-0" data-kid="1-2-5-1-1-1-2-2" data-name="halftone overlay"></div>
+</div>
+</div>
+<div class="md:col-span-7 flex flex-col justify-center" data-kid="1-2-5-1-1-2" data-name="success case quote section">
+<div class="relative z-10 bg-[var(--onyx)] p-12 brutalist-border" data-kid="1-2-5-1-1-2-1" data-name="quote element" id="pull-quote">
+<i class="ti ti-quote text-7xl text-[var(--flame)]/10 absolute -top-8 -left-8" data-kid="1-2-5-1-1-2-1-1" data-name="quote icon"></i>
+<div class="text-[var(--flame)] text-xs font-bold tracking-[0.3em] uppercase mb-10 font-mono flex items-center gap-4" data-kid="1-2-5-1-1-2-1-2" data-name="quote label group">
+<span class="w-8 h-[1px] bg-[var(--flame)]" data-kid="1-2-5-1-1-2-1-2-1" data-name="label underline"></span>
+                                CASE_STUDY // BAKERY_GROUP
+                            </div>
+<p class="text-4xl md:text-5xl font-black text-[var(--platinum)] uppercase tracking-tighter leading-tight mb-12 font-heading" data-kid="1-2-5-1-1-2-1-3" data-name="quote text">
+                                "Inventory synced across 5 production units with <span class="text-[var(--flame)]" data-kid="1-2-5-1-1-2-1-3-1" data-name="highlighted zero loss text">zero loss</span>. Throughput +28%."
+                            </p>
+<div class="flex items-center gap-6" data-kid="1-2-5-1-1-2-1-4" data-name="quote author group">
+<div class="w-16 h-16 rounded-full bg-[var(--carbon)] border-2 border-[var(--flame)] flex items-center justify-center overflow-hidden" data-kid="1-2-5-1-1-2-1-4-1" data-name="author portrait container">
+<img alt="Operations Director" class="w-full h-full object-cover opacity-80" data-kid="1-2-5-1-1-2-1-4-1-1" data-name="author portrait image" src="https://i.pravatar.cc/100?u=solum_ops">
+</div>
+<div data-kid="1-2-5-1-1-2-1-4-2" data-name="author info container">
+<div class="text-[var(--platinum)] font-black uppercase text-lg font-heading tracking-tight" data-kid="1-2-5-1-1-2-1-4-2-1" data-name="author name text">Elias Thorne</div>
+<div class="text-[var(--flame)] text-xs font-mono uppercase font-bold" data-kid="1-2-5-1-1-2-1-4-2-2" data-name="author job title">Director of Global Operations</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="min-h-screen flex items-center bg-[var(--onyx)] relative overflow-hidden border-t border-[var(--platinum)]/10" data-kid="1-2-6" data-name="cta section" id="cta">
+
+<div class="absolute left-0 top-1/2 -translate-y-1/2 pointer-events-none select-none" data-kid="1-2-6-1" data-name="cta watermark wrapper" id="cta-watermark-wrapper">
+<div class="text-[25rem] md:text-[35rem] font-black text-[var(--platinum)]/5 leading-none ml-[-5%] font-heading mix-blend-overlay" data-kid="1-2-6-1-1" data-name="cta watermark number" id="cta-watermark">01</div>
+</div>
+<div class="w-full max-w-6xl mx-auto px-12 md:px-24 flex flex-col md:flex-row justify-between items-end gap-16 relative z-10" data-kid="1-2-6-2" data-name="cta content container">
+<div class="max-w-2xl" data-kid="1-2-6-2-1" data-name="cta headline container">
+<div class="text-[var(--flame)] text-sm font-bold font-mono mb-8 tracking-[0.5em] uppercase" data-kid="1-2-6-2-1-1" data-name="initiation protocol label">INITIATION_PROTOCOL</div>
+<h2 class="text-6xl md:text-[9rem] font-black text-[var(--platinum)] uppercase tracking-tighter leading-[0.8] mb-12 font-heading" data-kid="1-2-6-2-1-2" data-name="cta headline text">
+                        READY TO<br data-kid="1-2-6-2-1-2-1" data-name="cta headline break"><span class="text-[var(--flame)]" data-kid="1-2-6-2-1-2-2" data-name="cta headline highlighted text">REWIRE?</span>
+</h2>
+<p class="text-[var(--platinum)]/60 text-xl font-mono mb-12 max-w-xl" data-kid="1-2-6-2-1-3" data-name="cta description text">
+                        The factory floor is waiting. Initiate an encrypted WhatsApp tunnel to discuss your industrial bottleneck today.
+                    </p>
+</div>
+<div class="w-full md:w-auto" data-kid="1-2-6-2-2" data-name="cta button container">
+<a class="block bg-[var(--flame)] text-white text-center md:text-left px-14 py-10 text-3xl font-black uppercase tracking-tighter hover:bg-[var(--platinum)] hover:text-[var(--onyx)] transition-all transform hover:-translate-y-3 brutalist-border shadow-[15px_15px_0px_0px_rgba(255,79,0,0.3)] font-heading group" data-kid="1-2-6-2-2-1" data-name="initiate chat button" href="https://wa.me/yournumber">
+                        INITIATE CHAT
+                        <i class="ti ti-arrow-right ml-4 group-hover:translate-x-2 transition-transform" data-kid="1-2-6-2-2-1-1" data-name="right arrow icon"></i>
+</a>
+</div>
+</div>
+</section>
+<footer class="py-12 px-12 md:px-24 border-t border-[var(--platinum)]/10 flex flex-col md:flex-row justify-between items-center gap-8 font-mono text-[10px] text-[var(--platinum)]/30 uppercase tracking-[0.2em] bg-[var(--onyx)]" data-kid="1-2-7" data-name="footer bar">
+<div class="flex items-center gap-6" data-kid="1-2-7-1" data-name="footer status group">
+<div class="flex items-center gap-2" data-kid="1-2-7-1-1" data-name="footer status element">
+<div class="w-2 h-2 rounded-full bg-green-500 animate-pulse" data-kid="1-2-7-1-1-1" data-name="footer status indicator"></div>
+                    SYSTEM_STABLE
+                </div>
+<div class="hidden md:block w-[1px] h-4 bg-[var(--platinum)]/10" data-kid="1-2-7-1-2" data-name="footer separator 1"></div>
+<div class="hidden md:block" data-kid="1-2-7-1-3" data-name="footer stats text">TX_LOAD: 0.042ms // BUFF: 92%</div>
+<div class="hidden md:block w-[1px] h-4 bg-[var(--platinum)]/10" data-kid="1-2-7-1-4" data-name="footer separator 2"></div>
+<div data-kid="1-2-7-1-5" data-name="footer copyright text">© 2024 SOLUM_SF</div>
+</div>
+<div class="flex gap-12" data-kid="1-2-7-2" data-name="footer links group">
+<a class="hover:text-[var(--flame)] transition-colors" data-kid="1-2-7-2-1" data-name="privacy policy link" href="#">Privacy</a>
+<a class="hover:text-[var(--flame)] transition-colors" data-kid="1-2-7-2-2" data-name="terms of service link" href="#">Terms</a>
+<a class="hover:text-[var(--flame)] transition-colors" data-kid="1-2-7-2-3" data-name="audit logs link" href="#">Audit_Logs</a>
+</div>
+<div class="font-bold" data-kid="1-2-7-3" data-name="footer build version text">BUILD_4.0.12_STABLE</div>
+</footer>
+</main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js" data-kid="6"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js" data-kid="7"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/TextPlugin.min.js" data-kid="8"></script>
+<script type="module" data-kid="9">
+    import Lenis from "https://esm.sh/lenis@1"
+    import Snap from "https://esm.sh/lenis@1/snap"
+    
+    // Initialize GSAP Plugins
+    gsap.registerPlugin(ScrollTrigger, TextPlugin);
+
+    // Smooth Scroll (Lenis) with GSAP Sync
+    const lenis = new Lenis({
+        lerp: 0.1,
+        smoothWheel: true
+    })
+
+    // GSAP Ticker Sync for Lenis
+    lenis.on('scroll', ScrollTrigger.update)
+    gsap.ticker.add((time)=>{
+        lenis.raf(time * 1000)
+    })
+    gsap.ticker.lagSmoothing(0)
+
+    // Hero Typewriter Sequence
+    const heroTimeline = gsap.timeline();
+    heroTimeline.to("#hero-typewriter", {
+        duration: 3,
+        text: "Solum_Software_Factory",
+        ease: "none"
+    }).to(".hero-content-reveal", {
+        opacity: 1,
+        y: 0,
+        duration: 1.5,
+        stagger: 0.4,
+        ease: "expo.out"
+    }, "-=0.8");
+
+    // Scramble Text Effect
+    const scrambleElements = document.querySelectorAll('.scramble-trigger');
+    scrambleElements.forEach(el => {
+        const originalText = el.dataset.scramble;
+        const scrambleChars = "X01$!@%*#<>/?";
+        
+        el.addEventListener('mouseenter', () => {
+            let iteration = 0;
+            const interval = setInterval(() => {
+                el.innerText = originalText.split("")
+                    .map((letter, index) => {
+                        if(index < iteration) return originalText[index];
+                        return scrambleChars[Math.floor(Math.random() * scrambleChars.length)]
+                    })
+                    .join("");
+                
+                if(iteration >= originalText.length) clearInterval(interval);
+                iteration += 1/4;
+            }, 35);
+        });
+
+        el.addEventListener('mouseleave', () => {
+            el.innerText = originalText;
+        });
+    });
+
+    // Staggered Reveal for Ledger Rows
+    gsap.utils.toArray('.ledger-row').forEach((row, i) => {
+        gsap.from(row, {
+            scrollTrigger: {
+                trigger: row,
+                start: "top 95%",
+            },
+            opacity: 0,
+            x: -40,
+            duration: 1.5,
+            ease: "power4.out",
+            delay: i * 0.2
+        });
+    });
+
+    // Tech Blueprint Cards
+    gsap.utils.toArray('.blueprint-card').forEach((card, i) => {
+        gsap.from(card, {
+            scrollTrigger: {
+                trigger: card,
+                start: "top 90%",
+            },
+            opacity: 0,
+            y: 30,
+            duration: 1.2,
+            ease: "expo.out",
+            delay: i * 0.1
+        });
+    });
+
+    // Parallax
+    gsap.to(".bakery-image-wrap", {
+        y: -120,
+        scrollTrigger: {
+            trigger: "#success-case",
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1
+        }
+    });
+
+    gsap.to("#cta-watermark", {
+        y: -180,
+        scrollTrigger: {
+            trigger: "#cta",
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1.5
+        }
+    });
+</script>
