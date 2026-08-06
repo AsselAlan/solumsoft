@@ -12,7 +12,6 @@ import TechStack from './components/TechStack';
 import SuccessCase from './components/SuccessCase';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
-import Chatbot from './components/Chatbot';
 
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
@@ -141,7 +140,6 @@ function App() {
         <CTA />
         <Footer />
       </main>
-      <Chatbot />
     </div>
   );
 }
