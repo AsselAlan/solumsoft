@@ -28,12 +28,19 @@ const Sidebar = () => {
         </a>
       </div>
       
-      <div className="hidden md:flex mt-auto">
+      <div className="hidden md:flex flex-col gap-6 mt-auto items-center pb-4">
+        <a href="https://www.instagram.com/solumsoft/" target="_blank" rel="noopener noreferrer" className="text-platinum/40 hover:text-flame transition-all duration-300" title="Instagram">
+          <i className="ti ti-brand-instagram text-2xl"></i>
+        </a>
+        <a href="https://www.linkedin.com/company/110595068/" target="_blank" rel="noopener noreferrer" className="text-platinum/40 hover:text-technical-blue transition-all duration-300" title="LinkedIn">
+          <i className="ti ti-brand-linkedin text-2xl"></i>
+        </a>
         <a 
-          href="https://wa.me/solumsf" 
+          href="https://wa.me/5492216548471" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="w-12 h-12 rounded-full bg-flame flex items-center justify-center text-white shadow-[0_0_20px_rgba(255,79,0,0.4)] hover:scale-110 hover:bg-technical-blue transition-all duration-300"
+          className="w-12 h-12 mt-2 rounded-full bg-flame flex items-center justify-center text-white shadow-[0_0_20px_rgba(255,79,0,0.4)] hover:scale-110 hover:bg-technical-blue transition-all duration-300"
+          title="WhatsApp"
         >
           <i className="ti ti-brand-whatsapp text-2xl"></i>
         </a>

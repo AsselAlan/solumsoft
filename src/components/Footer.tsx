@@ -14,9 +14,15 @@ const Footer = () => {
         <div>© 2024 SOLUM_SF</div>
       </div>
       
-      <div className="flex gap-12">
+      <div className="flex gap-12 text-center md:text-left">
         <button className="hover:text-technical-blue transition-colors">Política_de_Privacidad</button>
         <button className="hover:text-technical-blue transition-colors">Términos_de_Servicio</button>
+      </div>
+
+      <div className="flex items-center gap-6">
+        <a href="https://www.instagram.com/solumsoft/" target="_blank" rel="noopener noreferrer" className="text-platinum/40 hover:text-flame transition-colors text-2xl"><i className="ti ti-brand-instagram"></i></a>
+        <a href="https://www.linkedin.com/company/110595068/" target="_blank" rel="noopener noreferrer" className="text-platinum/40 hover:text-technical-blue transition-colors text-2xl"><i className="ti ti-brand-linkedin"></i></a>
+        <a href="https://wa.me/5492216548471" target="_blank" rel="noopener noreferrer" className="text-platinum/40 hover:text-green-500 transition-colors text-2xl"><i className="ti ti-brand-whatsapp"></i></a>
       </div>
       
       <div className="font-bold text-flame">BUILD_4.0.12_STABLE</div>
