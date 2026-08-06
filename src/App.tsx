@@ -132,7 +132,7 @@ function App() {
     <div className="flex bg-onyx selection:bg-flame selection:text-white">
       <Sidebar />
 
-      <main className="ml-20 flex-1">
+      <main className="md:ml-20 pb-16 md:pb-0 flex-1">
         <Hero />
         <Quadrants />
         <Ledger />

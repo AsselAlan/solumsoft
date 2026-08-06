@@ -48,7 +48,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="min-h-screen flex flex-col justify-center px-12 md:px-24 relative overflow-hidden">
+    <section id="hero" className="min-h-screen flex flex-col justify-center px-12 md:px-24 relative overflow-hidden">
 
 
       <div className="absolute top-1/2 right-12 md:right-24 -translate-y-1/2 pointer-events-none z-0">

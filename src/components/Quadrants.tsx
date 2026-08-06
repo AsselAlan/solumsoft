@@ -9,7 +9,7 @@ const quadrants = [
 
 const Quadrants = () => {
   return (
-    <section className="min-h-screen grid grid-cols-1 md:grid-cols-2 grid-rows-2 border-t border-platinum/10 bg-onyx relative">
+    <section id="quadrants" className="min-h-screen grid grid-cols-1 md:grid-cols-2 grid-rows-2 border-t border-platinum/10 bg-onyx relative">
       {quadrants.map((q) => (
         <div key={q.id} className="border-r border-b border-platinum/10 p-12 md:p-24 flex flex-col justify-end group cursor-crosshair hover:bg-carbon transition-colors duration-500 relative overflow-hidden reveal-up">
           <div className="text-[8px] text-platinum/10 absolute top-4 left-4 font-mono leading-none">

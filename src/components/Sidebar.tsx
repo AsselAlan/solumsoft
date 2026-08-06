@@ -3,27 +3,32 @@ import logo from '../assets/logo.svg';
 
 const Sidebar = () => {
   return (
-    <nav className="fixed left-0 top-0 h-screen w-20 bg-onyx border-r border-platinum/10 flex flex-col items-center py-8 z-50">
-      <div className="mb-12">
-        <img src={logo} alt="Solum Logo" className="w-12 h-auto hover:scale-110 transition-transform duration-300" />
+    <nav className="fixed bottom-0 left-0 w-full h-16 md:top-0 md:h-screen md:w-20 bg-onyx border-t md:border-t-0 md:border-r border-platinum/10 flex flex-row md:flex-col items-center md:py-8 z-50 px-4 md:px-0">
+      <div className="hidden md:block mb-12">
+        <a href="#hero">
+          <img src={logo} alt="Solum Logo" className="w-12 h-auto hover:scale-110 transition-transform duration-300" />
+        </a>
       </div>
       
-      <div className="flex flex-col gap-8 flex-1">
-        <button className="text-platinum/40 hover:text-technical-blue transition-all duration-300" title="Consola">
+      <div className="flex flex-row md:flex-col justify-around md:justify-start w-full md:w-auto md:gap-8 flex-1 md:flex-initial h-full md:h-auto items-center">
+        <a href="#hero" className="md:hidden flex items-center justify-center h-full text-platinum/40 hover:text-technical-blue transition-all duration-300">
+           <img src={logo} alt="Solum Logo" className="w-8 h-auto" />
+        </a>
+        <a href="#tech-stack" className="text-platinum/40 hover:text-technical-blue transition-all duration-300 flex items-center justify-center h-full md:h-auto" title="Consola">
           <i className="ti ti-terminal-2 text-2xl"></i>
-        </button>
-        <button className="text-platinum/40 hover:text-technical-blue transition-all duration-300" title="Arquitectura">
+        </a>
+        <a href="#quadrants" className="text-platinum/40 hover:text-technical-blue transition-all duration-300 flex items-center justify-center h-full md:h-auto" title="Arquitectura">
           <i className="ti ti-box-model-2 text-2xl"></i>
-        </button>
-        <button className="text-platinum/40 hover:text-technical-blue transition-all duration-300" title="Base de Datos">
+        </a>
+        <a href="#capability-ledger" className="text-platinum/40 hover:text-technical-blue transition-all duration-300 flex items-center justify-center h-full md:h-auto" title="Base de Datos">
           <i className="ti ti-database text-2xl"></i>
-        </button>
-        <button className="text-platinum/40 hover:text-technical-blue transition-all duration-300" title="Depurar">
+        </a>
+        <a href="#success-case" className="text-platinum/40 hover:text-technical-blue transition-all duration-300 flex items-center justify-center h-full md:h-auto" title="Depurar">
           <i className="ti ti-bug text-2xl"></i>
-        </button>
+        </a>
       </div>
       
-      <div className="mt-auto">
+      <div className="hidden md:flex mt-auto">
         <a 
           href="https://wa.me/solumsf" 
           target="_blank" 
