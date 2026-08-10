@@ -2,7 +2,7 @@ import React from 'react';
 
 const CTA = () => {
   return (
-    <section className="min-h-screen flex items-center bg-onyx relative overflow-hidden border-t border-platinum/10" id="cta">
+    <section className="min-h-screen flex items-center relative overflow-hidden border-t border-platinum/10" id="cta">
       <div className="absolute left-0 top-1/2 -translate-y-1/2 pointer-events-none select-none">
         <div className="text-[20rem] font-black text-platinum/[0.03] leading-none ml-[-5%] font-heading mix-blend-overlay" id="cta-watermark">01</div>
       </div>
@@ -13,7 +13,7 @@ const CTA = () => {
           <h2 className="text-5xl md:text-7xl font-black text-platinum uppercase tracking-tighter leading-[0.8] mb-12 font-heading group">
             ¿LISTO PARA<br /><span className="text-flame group-hover:text-technical-blue transition-colors duration-500">ESCALAR?</span>
           </h2>
-          <p className="text-platinum/60 text-xl font-mono mb-12 max-w-xl leading-relaxed">
+          <p className="text-white text-xl font-mono mb-12 max-w-xl leading-relaxed">
             Visita la web, entiende el valor, mira el éxito. Inicia un chat directo por WhatsApp para transformar tu operación hoy.
           </p>
         </div>

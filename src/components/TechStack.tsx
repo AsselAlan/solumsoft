@@ -50,15 +50,15 @@ const TechStack = () => {
   };
 
   return (
-    <section className="solum-demo-wrapper" id="tech-stack">
+    <section className="solum-demo-wrapper px-4 md:px-24" id="tech-stack">
       <div className="solum-demo-section">
         
         {/* Contenido Explicativo */}
         <div className="solum-copy fade-in-up">
           <span className="solum-badge">Simplicidad Extrema</span>
-          <h2>Un simple dashboard puede ahorrarte <span>días de trabajo manual.</span></h2>
-          <p>Reemplazá las planillas de cálculo propensas a errores por control absoluto. Observá cómo nuestra IA Práctica detecta fugas de stock y audita procesos al instante, sin que tengas que cargar un solo dato.</p>
-          <p style={{fontSize: '0.9rem', opacity: 0.7}}>👉 Hacé clic en <strong>"Auditar con IA"</strong> en el panel para ver el sistema en acción.</p>
+          <h2 className="uppercase">TECNOLOGÍA ADAPTADA A TU <span>NEGOCIO</span></h2>
+          <p>No todos los negocios necesitan un sistema enorme ni procesos innecesarios.</p>
+          <p>Desarrollamos herramientas a medida, enfocadas en lo que realmente necesita tu operación.</p>
         </div>
 
         {/* Panel Interactivo */}

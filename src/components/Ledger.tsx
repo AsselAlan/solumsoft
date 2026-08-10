@@ -23,19 +23,19 @@ const ledgerItems = [
 
 const Ledger = () => {
   return (
-    <section className="py-32 md:py-48 px-6 md:px-12 lg:px-24 bg-onyx" id="capability-ledger">
+    <section className="py-32 md:py-48 px-6 md:px-12 lg:px-24" id="capability-ledger">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row justify-between items-start mb-24 gap-12 reveal-up">
           <div className="flex-1">
             <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-platinum uppercase tracking-tighter leading-[0.85] font-heading mb-6">
-              PUNTOS DE INFLEXIÓN:<br /><span className="text-flame">DETENEMOS LA FUGA DE RECURSOS</span>
+              PUNTOS DE INFLEXIÓN:<br /><span className="text-flame">IDENTIFICAMOS DÓNDE SE PIERDE TIEMPO</span>
             </h2>
-            <p className="text-xl text-platinum/80 font-mono mt-8 max-w-2xl">
+            <p className="text-xl text-white font-mono mt-8 max-w-2xl">
               
             </p>
           </div>
-          <div className="lg:max-w-md text-platinum/70 font-mono text-sm leading-relaxed border-t border-technical-blue pt-4">
-            No importa si fabricas alimentos, gestionas flotas logísticas o administras un depósito. En Solum SF no vendemos sistemas cerrados para un rubro específico ni te obligamos a encajar en procesos que no son tuyos. Mapeamos tu flujo de trabajo real y atacamos directamente los cuellos de botella operativos que están consumiendo tus horas más productivas.
+          <div className="lg:max-w-lg text-white font-mono text-base leading-relaxed border-t border-technical-blue pt-4">
+            No importa si fabricás alimentos, gestionás una flota, operás un depósito o administrás una empresa de servicios. En Solum no buscamos imponerte un sistema genérico. <span className="font-bold">Analizamos cómo funciona realmente tu operación, detectamos los procesos que generan demoras y desarrollamos herramientas para hacerlos más simples y eficientes.</span>
           </div>
         </div>
         
@@ -60,7 +60,7 @@ const Ledger = () => {
               
               <div className="md:col-span-4">
                 <span className="md:hidden block text-platinum/50 font-mono text-xs uppercase font-bold mb-2">La Fuga Oculta (Pérdida)</span>
-                <div className="text-platinum/70 font-mono text-sm leading-relaxed">{item.perdida}</div>
+                <div className="text-white font-mono text-sm leading-relaxed">{item.perdida}</div>
               </div>
               
               <div className="md:col-span-4">

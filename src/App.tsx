@@ -128,17 +128,27 @@ function App() {
   }, []);
 
   return (
-    <div className="flex bg-onyx selection:bg-flame selection:text-white">
+    <div className="flex bg-onyx selection:bg-flame selection:text-white relative">
       <Sidebar />
 
-      <main className="md:ml-20 pb-16 md:pb-0 flex-1">
-        <Hero />
-        <Quadrants />
-        <Ledger />
-        <TechStack />
-        <SuccessCase />
-        <CTA />
-        <Footer />
+      <main className="md:ml-20 pb-16 md:pb-0 flex-1 overflow-x-hidden w-full relative">
+        {/* Honeycomb Abstract Patterns */}
+        <div className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
+          <div className="absolute top-[10%] -left-10 w-[500px] md:w-[800px] h-[800px] bg-honeycomb opacity-80" style={{ maskImage: 'radial-gradient(ellipse at left center, rgba(0,0,0,1) 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0) 70%)', WebkitMaskImage: 'radial-gradient(ellipse at left center, rgba(0,0,0,1) 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0) 70%)' }}></div>
+          <div className="absolute top-[30%] -right-10 w-[500px] md:w-[800px] h-[1000px] bg-honeycomb opacity-80" style={{ maskImage: 'radial-gradient(ellipse at right center, rgba(0,0,0,1) 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0) 70%)', WebkitMaskImage: 'radial-gradient(ellipse at right center, rgba(0,0,0,1) 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0) 70%)' }}></div>
+          <div className="absolute top-[55%] -left-10 w-[600px] md:w-[900px] h-[900px] bg-honeycomb opacity-80" style={{ maskImage: 'radial-gradient(ellipse at left center, rgba(0,0,0,1) 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0) 70%)', WebkitMaskImage: 'radial-gradient(ellipse at left center, rgba(0,0,0,1) 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0) 70%)' }}></div>
+          <div className="absolute top-[80%] -right-10 w-[500px] md:w-[800px] h-[800px] bg-honeycomb opacity-80" style={{ maskImage: 'radial-gradient(ellipse at right center, rgba(0,0,0,1) 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0) 70%)', WebkitMaskImage: 'radial-gradient(ellipse at right center, rgba(0,0,0,1) 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0) 70%)' }}></div>
+        </div>
+
+        <div className="relative z-10">
+          <Hero />
+          <TechStack />
+          <Quadrants />
+          <Ledger />
+          <SuccessCase />
+          <CTA />
+          <Footer />
+        </div>
       </main>
     </div>
   );

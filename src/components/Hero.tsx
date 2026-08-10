@@ -18,6 +18,8 @@ const Hero = () => {
       ease: "power2.out",
       onComplete: () => {
         gsap.to(".bg-watermark", {
+          y: -30,
+          rotation: 3,
           scale: 1.05,
           duration: 4,
           repeat: -1,
@@ -38,6 +40,15 @@ const Hero = () => {
       ease: "back.out(1.5)"
     });
 
+        gsap.to(".terminal-dot", {
+          opacity: 0.2,
+          duration: 0.8,
+          stagger: 0.2,
+          repeat: -1,
+          yoyo: true,
+          ease: "power1.inOut"
+        });
+
     tl.to(".hero-reveal", {
       opacity: 1,
       y: 0,
@@ -48,11 +59,11 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="hero" className="min-h-screen flex flex-col justify-center px-12 md:px-24 relative overflow-hidden">
+    <section id="hero" className="min-h-screen flex flex-col justify-center px-4 md:px-24 relative">
 
 
-      <div className="absolute top-1/2 right-12 md:right-24 -translate-y-1/2 pointer-events-none z-0">
-        <div className="bg-watermark opacity-50 origin-center flex items-center justify-center">
+      <div className="absolute top-[85%] md:top-1/2 right-[-20%] md:right-24 -translate-y-1/2 pointer-events-none z-0">
+        <div className="bg-watermark opacity-30 md:opacity-50 origin-center flex items-center justify-center scale-75 md:scale-100">
           <div
             className="w-[500px] h-[500px] md:w-[800px] md:h-[800px] bg-platinum/30"
             style={{
@@ -69,12 +80,12 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="w-full max-w-5xl brutalist-border bg-carbon overflow-hidden mb-16 relative z-10 border-flame/50 shadow-[6px_6px_0px_0px_rgba(0,204,255,0.1)]">
-        <div className="bg-onyx border-b border-flame/50 px-4 py-2 flex items-center justify-between">
+      <div className="w-full max-w-5xl brutalist-border bg-black overflow-hidden mb-16 mt-24 md:mt-0 relative z-10 border-platinum/20 shadow-[6px_6px_0px_0px_rgba(242,243,244,0.05)]">
+        <div className="bg-carbon border-b border-platinum/10 px-4 py-2 flex items-center justify-between">
           <div className="flex gap-2">
-            <div className="w-3 h-3 rounded-full bg-flame"></div>
-            <div className="w-3 h-3 rounded-full bg-technical-blue/40"></div>
-            <div className="w-3 h-3 rounded-full bg-technical-blue/20"></div>
+            <div className="w-3 h-3 rounded-full bg-flame terminal-dot"></div>
+            <div className="w-3 h-3 rounded-full bg-technical-blue terminal-dot opacity-40"></div>
+            <div className="w-3 h-3 rounded-full bg-technical-blue terminal-dot opacity-20"></div>
           </div>
           <div className="text-platinum/40 text-[10px] uppercase tracking-widest font-mono">
             solum_terminal_v4.0.0-industrial
@@ -85,22 +96,22 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="p-10 font-mono">
+        <div className="p-6 md:p-10 font-mono">
           <div className="flex items-center gap-3 mb-6">
             <LogoMarcaIcon className="h-20 md:h-32 w-auto object-contain" />
           </div>
 
           <div className="opacity-0 translate-y-4 hero-reveal">
-            <p className="text-platinum/80 text-base md:text-lg max-w-2xl mb-12 leading-relaxed border-l-2 border-technical-blue pl-6">
+            <p className="text-white text-base md:text-lg max-w-2xl mb-12 leading-relaxed border-l-2 border-technical-blue pl-6">
               Diseñamos y desarrollamos software que potencian tu empresa. Nos adaptamos por completo a tus procesos.<br /><br />
               Nacimos en Argentina para ayudar a negocios locales a crecer con herramientas tecnológicas simples, inteligentes y confiables.
             </p>
             <div className="flex flex-wrap items-center gap-8">
-              <button className="bg-flame text-white px-10 py-5 font-black uppercase tracking-[0.2em] hover:bg-technical-blue hover:text-onyx transition-all duration-300 flex items-center gap-4 group">
-                <span className="text-xs opacity-50">sh</span>
+              <a href="https://wa.me/5492216548471" target="_blank" rel="noopener noreferrer" className="bg-flame text-white px-4 py-3 md:px-10 md:py-5 text-sm md:text-base font-black uppercase tracking-[0.15em] md:tracking-[0.2em] hover:bg-technical-blue hover:text-onyx transition-all duration-300 flex items-center gap-2 md:gap-4 group w-fit">
+                <span className="text-[10px] md:text-xs opacity-50">sh</span>
                 ./iniciar_contacto
                 <i className="ti ti-chevron-right group-hover:translate-x-1 transition-transform"></i>
-              </button>
+              </a>
               <div className="flex flex-col">
                 <span className="text-technical-blue text-[10px] font-bold uppercase tracking-widest mb-1">// STATUS_LOG</span>
                 <div className="flex items-center gap-2 text-platinum/40 text-xs">

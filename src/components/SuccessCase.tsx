@@ -3,7 +3,7 @@ import standImage from '../assets/stand.png';
 
 const SuccessCase = () => {
   return (
-    <section className="py-24 md:py-32 relative bg-onyx overflow-hidden" id="success-case">
+    <section className="py-24 md:py-32 relative overflow-hidden" id="success-case">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
         
         <div className="text-center mb-16 md:mb-24 reveal-up">
@@ -20,7 +20,7 @@ const SuccessCase = () => {
               <h3 className="text-2xl font-black text-platinum uppercase tracking-tighter leading-tight mb-4 font-heading">
                 Cercanía y <span className="text-flame">Empatía Real</span>
               </h3>
-              <p className="text-sm md:text-base text-platinum/80 leading-relaxed font-sans">
+              <p className="text-sm md:text-base text-white leading-relaxed font-sans">
                 Sabemos que el mercado de las PyMEs suele estar abrumado por sistemas enlatados ultra complejos. Por eso, en Solum Soft no vendemos sistemas cerrados ni te obligamos a encajar en procesos que no son tuyos. Nos sentamos con vos, mapeamos tu flujo de trabajo real y atacamos directamente los cuellos de botella que te hacen perder tiempo y dinero.
               </p>
             </div>
@@ -43,7 +43,7 @@ const SuccessCase = () => {
               <h3 className="text-2xl font-black text-platinum uppercase tracking-tighter leading-tight mb-4 font-heading">
                 Agilidad sin <span className="text-flame">Fricciones</span>
               </h3>
-              <p className="text-sm md:text-base text-platinum/80 leading-relaxed font-sans">
+              <p className="text-sm md:text-base text-white leading-relaxed font-sans">
                 Entendemos que necesitás soluciones rápidas. Gracias a nuestro ecosistema tecnológico validado, podemos prometerte un desarrollo a medida en un plazo promedio de 15 a 21 días. Nuestro objetivo es reemplazar rápidamente el papel y las planillas de cálculo propensas a errores por aplicaciones web robustas y fáciles de usar.
               </p>
             </div>
@@ -52,7 +52,7 @@ const SuccessCase = () => {
               <h3 className="text-2xl font-black text-platinum uppercase tracking-tighter leading-tight mb-4 font-heading">
                 Acompañamiento <span className="text-flame">Continuo</span>
               </h3>
-              <p className="text-sm md:text-base text-platinum/80 leading-relaxed font-sans">
+              <p className="text-sm md:text-base text-white leading-relaxed font-sans">
                 No te entregamos un sistema para luego desaparecer. Nuestro modelo incluye soporte técnico directo por WhatsApp para que nunca te sientas solo frente a la pantalla. Tu única preocupación debe ser hacer crecer tu empresa; de la tecnología nos encargamos nosotros.
               </p>
             </div>
