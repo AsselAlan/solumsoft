@@ -13,9 +13,9 @@ const presetQAs: PresetQA[] = [
     question: "¿Cuáles son nuestros productos más rentables en el último trimestre?",
     answer: "Según tus datos, los productos más rentables en el último trimestre fueron:",
     bulletList: [
-      { label: "Producto A", value: "32% de margen" },
-      { label: "Producto B", value: "28% de margen" },
-      { label: "Producto C", value: "21% de margen" }
+      { label: "Producto 1", value: "32% de margen" },
+      { label: "Producto 2", value: "28% de margen" },
+      { label: "Producto 3", value: "21% de margen" }
     ],
     followUp: "¿Querés ver el detalle completo?"
   },
@@ -89,8 +89,8 @@ const Ledger = () => {
               IA QUE ENTIENDE TU NEGOCIO
             </div>
 
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-platinum tracking-tighter leading-[1.05] font-heading mb-6">
-              Pregunta datos de tu empresa <span className="text-flame">a la IA.</span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-platinum tracking-tighter leading-[1.05] font-heading mb-6 uppercase">
+              PREGUNTA DATOS DE TU EMPRESA <span className="text-flame">A LA IA.</span>
             </h2>
 
             <p className="text-platinum/80 font-mono text-base md:text-lg mb-10 leading-relaxed">
@@ -98,14 +98,14 @@ const Ledger = () => {
             </p>
 
             {/* Lista de Funcionalidades */}
-            <div className="space-y-6 mb-10">
+            <div className="space-y-6">
               {/* Item 1 */}
               <div className="flex items-start gap-4 group">
                 <div className="w-12 h-12 rounded-xl bg-onyx border border-technical-blue/40 flex items-center justify-center flex-shrink-0 group-hover:border-technical-blue group-hover:shadow-[0_0_15px_rgba(0,204,255,0.25)] transition-all duration-300">
                   <Database className="w-6 h-6 text-technical-blue" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-platinum font-heading group-hover:text-technical-blue transition-colors">
+                  <h3 className="text-lg font-bold text-platinum font-heading group-hover:text-technical-blue transition-colors uppercase">
                     Tu información, conectada
                   </h3>
                   <p className="text-platinum/60 font-mono text-sm leading-relaxed mt-1">
@@ -120,7 +120,7 @@ const Ledger = () => {
                   <Brain className="w-6 h-6 text-technical-blue" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-platinum font-heading group-hover:text-technical-blue transition-colors">
+                  <h3 className="text-lg font-bold text-platinum font-heading group-hover:text-technical-blue transition-colors uppercase">
                     Cerebro RAG
                   </h3>
                   <p className="text-platinum/60 font-mono text-sm leading-relaxed mt-1">
@@ -135,28 +135,13 @@ const Ledger = () => {
                   <MessageSquare className="w-6 h-6 text-technical-blue" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-platinum font-heading group-hover:text-technical-blue transition-colors">
+                  <h3 className="text-lg font-bold text-platinum font-heading group-hover:text-technical-blue transition-colors uppercase">
                     Respuestas precisas
                   </h3>
                   <p className="text-platinum/60 font-mono text-sm leading-relaxed mt-1">
                     Haz preguntas en lenguaje natural y obtené respuestas basadas 100% en tus datos.
                   </p>
                 </div>
-              </div>
-            </div>
-
-            {/* Tarjeta Destacada Inferior */}
-            <div className="p-5 rounded-2xl bg-onyx/80 border-2 border-flame/80 shadow-[0_0_20px_rgba(255,79,0,0.15)] flex items-start gap-4">
-              <div className="w-10 h-10 rounded-lg bg-flame/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <Sparkles className="w-5 h-5 text-flame" />
-              </div>
-              <div>
-                <p className="text-white font-mono text-sm md:text-base font-bold leading-snug">
-                  Menos búsqueda manual. Más decisiones inteligentes.
-                </p>
-                <p className="text-flame font-mono text-xs md:text-sm font-semibold mt-1">
-                  Tu negocio, al alcance de una pregunta.
-                </p>
               </div>
             </div>
           </div>

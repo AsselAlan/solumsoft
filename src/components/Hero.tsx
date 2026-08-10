@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import gsap from 'gsap';
 import LogoMarcaIcon from './LogoMarcaIcon';
-import logo from '../assets/logo.svg';
+import WatermarkLogo from './WatermarkLogo';
 
 const Hero = () => {
 
@@ -12,7 +12,7 @@ const Hero = () => {
       opacity: 0,
       scale: 0.8
     }, {
-      opacity: 0.5,
+      opacity: 0.6,
       scale: 1,
       duration: 1.5,
       ease: "power2.out",
@@ -63,20 +63,8 @@ const Hero = () => {
 
 
       <div className="absolute top-[85%] md:top-1/2 right-[-20%] md:right-24 -translate-y-1/2 pointer-events-none z-0">
-        <div className="bg-watermark opacity-30 md:opacity-50 origin-center flex items-center justify-center scale-75 md:scale-100">
-          <div
-            className="w-[500px] h-[500px] md:w-[800px] md:h-[800px] bg-platinum/30"
-            style={{
-              WebkitMaskImage: `url(${logo})`,
-              WebkitMaskSize: 'contain',
-              WebkitMaskRepeat: 'no-repeat',
-              WebkitMaskPosition: 'center',
-              maskImage: `url(${logo})`,
-              maskSize: 'contain',
-              maskRepeat: 'no-repeat',
-              maskPosition: 'center'
-            }}
-          />
+        <div className="bg-watermark origin-center flex items-center justify-center scale-75 md:scale-100">
+          <WatermarkLogo className="w-[450px] h-[450px] md:w-[650px] md:h-[650px] object-contain drop-shadow-[0_0_40px_rgba(0,204,255,0.25)]" />
         </div>
       </div>
 
