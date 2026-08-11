@@ -36,6 +36,7 @@ const cardsData: CardData[] = [
 
 const SuccessCase = () => {
   const [flippedCards, setFlippedCards] = useState<boolean[]>([false, false, false]);
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
   const animatedRef = useRef<boolean>(false);
 
@@ -46,22 +47,22 @@ const SuccessCase = () => {
           if (entry.isIntersecting && !animatedRef.current) {
             animatedRef.current = true;
 
-            // Giro una por una con retardo secuencial
+            // Mayor tiempo de exhibición de los iconos (1.8s, 3.4s, 5.0s)
             setTimeout(() => {
               setFlippedCards((prev) => [true, prev[1], prev[2]]);
-            }, 700);
+            }, 1800);
 
             setTimeout(() => {
               setFlippedCards((prev) => [prev[0], true, prev[2]]);
-            }, 1600);
+            }, 3400);
 
             setTimeout(() => {
               setFlippedCards((prev) => [prev[0], prev[1], true]);
-            }, 2500);
+            }, 5000);
           }
         });
       },
-      { threshold: 0.25 }
+      { threshold: 0.2 }
     );
 
     if (sectionRef.current) {
@@ -79,6 +80,54 @@ const SuccessCase = () => {
     });
   };
 
+  const renderCard = (card: CardData) => {
+    // Si la tarjeta giró pero el usuario le hace hover, vuelve a mostrar el icono celeste (0deg)
+    const isShowingText = flippedCards[card.id] && hoveredCard !== card.id;
+
+    return (
+      <div 
+        key={card.id}
+        onClick={() => toggleCard(card.id)}
+        onMouseEnter={() => setHoveredCard(card.id)}
+        onMouseLeave={() => setHoveredCard(null)}
+        className="relative w-full min-h-[420px] md:min-h-[390px] cursor-pointer [perspective:1000px] reveal-up group"
+      >
+        <div 
+          className={`w-full h-full relative transition-transform duration-1000 [transform-style:preserve-3d] ${
+            isShowingText ? '[transform:rotateY(180deg)]' : ''
+          }`}
+        >
+          {/* CARA FRONTAL: Icono central celeste */}
+          <div className="absolute inset-0 w-full h-full bg-onyx p-6 md:p-8 border border-technical-blue/30 shadow-[6px_6px_0px_0px_rgba(0,204,255,0.2)] rounded-2xl flex flex-col items-center justify-center text-center [backface-visibility:hidden] group-hover:border-technical-blue transition-colors">
+            <span className="text-[10px] font-mono text-technical-blue tracking-widest uppercase mb-6">
+              {card.category}
+            </span>
+            <div className="w-20 h-20 rounded-2xl bg-technical-blue/10 border border-technical-blue/40 flex items-center justify-center shadow-[0_0_30px_rgba(0,204,255,0.25)] mb-6 group-hover:scale-110 transition-transform duration-500">
+              {card.icon}
+            </div>
+            <h3 className="text-2xl font-black text-platinum uppercase tracking-tighter font-heading">
+              {card.titleNode}
+            </h3>
+            <div className="text-[10px] font-mono text-platinum/40 mt-4 flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-technical-blue animate-pulse"></span>
+              HOVER / CLICK PARA ICONO O TEXTO
+            </div>
+          </div>
+
+          {/* CARA TRASERA: Texto explicativo */}
+          <div className="absolute inset-0 w-full h-full bg-[#12141A] p-6 md:p-8 border border-technical-blue/50 shadow-[6px_6px_0px_0px_rgba(0,204,255,0.3)] rounded-2xl flex flex-col justify-center overflow-y-auto [backface-visibility:hidden] [transform:rotateY(180deg)]">
+            <h3 className="text-xl md:text-2xl font-black text-platinum uppercase tracking-tighter leading-tight mb-4 font-heading">
+              {card.titleNode}
+            </h3>
+            <p className="text-xs md:text-sm text-white/90 leading-relaxed font-sans">
+              {card.desc}
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <section ref={sectionRef} className="py-24 md:py-32 relative overflow-hidden" id="success-case">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
@@ -93,48 +142,12 @@ const SuccessCase = () => {
           
           {/* Columna Izquierda (Card 1) */}
           <div className="flex flex-col gap-8 order-2 lg:order-1">
-            <div 
-              onClick={() => toggleCard(0)}
-              className="relative w-full h-[360px] md:h-[320px] cursor-pointer [perspective:1000px] reveal-up group"
-            >
-              <div 
-                className={`w-full h-full relative transition-transform duration-1000 [transform-style:preserve-3d] ${
-                  flippedCards[0] ? '[transform:rotateY(180deg)]' : ''
-                }`}
-              >
-                {/* CARA FRONTAL: Icono central celeste */}
-                <div className="absolute inset-0 w-full h-full bg-onyx p-8 border border-technical-blue/30 shadow-[6px_6px_0px_0px_rgba(0,204,255,0.2)] rounded-xl flex flex-col items-center justify-center text-center [backface-visibility:hidden] group-hover:border-technical-blue transition-colors">
-                  <span className="text-[10px] font-mono text-technical-blue tracking-widest uppercase mb-6">
-                    {cardsData[0].category}
-                  </span>
-                  <div className="w-20 h-20 rounded-2xl bg-technical-blue/10 border border-technical-blue/40 flex items-center justify-center shadow-[0_0_30px_rgba(0,204,255,0.25)] mb-6 group-hover:scale-110 transition-transform duration-500">
-                    {cardsData[0].icon}
-                  </div>
-                  <h3 className="text-2xl font-black text-platinum uppercase tracking-tighter font-heading">
-                    {cardsData[0].titleNode}
-                  </h3>
-                  <div className="text-[10px] font-mono text-platinum/40 mt-4 flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-technical-blue animate-pulse"></span>
-                    VER DETALLES
-                  </div>
-                </div>
-
-                {/* CARA TRASERA: Texto explicativo */}
-                <div className="absolute inset-0 w-full h-full bg-onyx p-8 border border-technical-blue/40 shadow-[6px_6px_0px_0px_rgba(0,204,255,0.3)] rounded-xl flex flex-col justify-center [backface-visibility:hidden] [transform:rotateY(180deg)]">
-                  <h3 className="text-2xl font-black text-platinum uppercase tracking-tighter leading-tight mb-4 font-heading">
-                    {cardsData[0].titleNode}
-                  </h3>
-                  <p className="text-sm md:text-base text-white/90 leading-relaxed font-sans">
-                    {cardsData[0].desc}
-                  </p>
-                </div>
-              </div>
-            </div>
+            {renderCard(cardsData[0])}
           </div>
 
           {/* Columna Central - Imagen Stand */}
           <div className="relative group order-1 lg:order-2 flex justify-center reveal-up">
-            <div className="relative aspect-[3/4] w-full max-w-sm overflow-hidden rounded-xl border border-platinum/15 shadow-2xl">
+            <div className="relative aspect-[3/4] w-full max-w-sm overflow-hidden rounded-2xl border border-platinum/15 shadow-2xl">
               <img 
                 src={standImage}
                 alt="Solum Soft Approach" 
@@ -145,85 +158,8 @@ const SuccessCase = () => {
           
           {/* Columna Derecha (Card 2 & Card 3) */}
           <div className="flex flex-col gap-8 order-3 lg:order-3">
-            
-            {/* Card 2 */}
-            <div 
-              onClick={() => toggleCard(1)}
-              className="relative w-full h-[360px] md:h-[320px] cursor-pointer [perspective:1000px] reveal-up group"
-            >
-              <div 
-                className={`w-full h-full relative transition-transform duration-1000 [transform-style:preserve-3d] ${
-                  flippedCards[1] ? '[transform:rotateY(180deg)]' : ''
-                }`}
-              >
-                {/* CARA FRONTAL: Icono central celeste */}
-                <div className="absolute inset-0 w-full h-full bg-onyx p-8 border border-technical-blue/30 shadow-[6px_6px_0px_0px_rgba(0,204,255,0.2)] rounded-xl flex flex-col items-center justify-center text-center [backface-visibility:hidden] group-hover:border-technical-blue transition-colors">
-                  <span className="text-[10px] font-mono text-technical-blue tracking-widest uppercase mb-6">
-                    {cardsData[1].category}
-                  </span>
-                  <div className="w-20 h-20 rounded-2xl bg-technical-blue/10 border border-technical-blue/40 flex items-center justify-center shadow-[0_0_30px_rgba(0,204,255,0.25)] mb-6 group-hover:scale-110 transition-transform duration-500">
-                    {cardsData[1].icon}
-                  </div>
-                  <h3 className="text-2xl font-black text-platinum uppercase tracking-tighter font-heading">
-                    {cardsData[1].titleNode}
-                  </h3>
-                  <div className="text-[10px] font-mono text-platinum/40 mt-4 flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-technical-blue animate-pulse"></span>
-                    VER DETALLES
-                  </div>
-                </div>
-
-                {/* CARA TRASERA: Texto explicativo */}
-                <div className="absolute inset-0 w-full h-full bg-onyx p-8 border border-technical-blue/40 shadow-[6px_6px_0px_0px_rgba(0,204,255,0.3)] rounded-xl flex flex-col justify-center [backface-visibility:hidden] [transform:rotateY(180deg)]">
-                  <h3 className="text-2xl font-black text-platinum uppercase tracking-tighter leading-tight mb-4 font-heading">
-                    {cardsData[1].titleNode}
-                  </h3>
-                  <p className="text-sm md:text-base text-white/90 leading-relaxed font-sans">
-                    {cardsData[1].desc}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 3 */}
-            <div 
-              onClick={() => toggleCard(2)}
-              className="relative w-full h-[360px] md:h-[320px] cursor-pointer [perspective:1000px] reveal-up group"
-            >
-              <div 
-                className={`w-full h-full relative transition-transform duration-1000 [transform-style:preserve-3d] ${
-                  flippedCards[2] ? '[transform:rotateY(180deg)]' : ''
-                }`}
-              >
-                {/* CARA FRONTAL: Icono central celeste */}
-                <div className="absolute inset-0 w-full h-full bg-onyx p-8 border border-technical-blue/30 shadow-[6px_6px_0px_0px_rgba(0,204,255,0.2)] rounded-xl flex flex-col items-center justify-center text-center [backface-visibility:hidden] group-hover:border-technical-blue transition-colors">
-                  <span className="text-[10px] font-mono text-technical-blue tracking-widest uppercase mb-6">
-                    {cardsData[2].category}
-                  </span>
-                  <div className="w-20 h-20 rounded-2xl bg-technical-blue/10 border border-technical-blue/40 flex items-center justify-center shadow-[0_0_30px_rgba(0,204,255,0.25)] mb-6 group-hover:scale-110 transition-transform duration-500">
-                    {cardsData[2].icon}
-                  </div>
-                  <h3 className="text-2xl font-black text-platinum uppercase tracking-tighter font-heading">
-                    {cardsData[2].titleNode}
-                  </h3>
-                  <div className="text-[10px] font-mono text-platinum/40 mt-4 flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-technical-blue animate-pulse"></span>
-                    VER DETALLES
-                  </div>
-                </div>
-
-                {/* CARA TRASERA: Texto explicativo */}
-                <div className="absolute inset-0 w-full h-full bg-onyx p-8 border border-technical-blue/40 shadow-[6px_6px_0px_0px_rgba(0,204,255,0.3)] rounded-xl flex flex-col justify-center [backface-visibility:hidden] [transform:rotateY(180deg)]">
-                  <h3 className="text-2xl font-black text-platinum uppercase tracking-tighter leading-tight mb-4 font-heading">
-                    {cardsData[2].titleNode}
-                  </h3>
-                  <p className="text-sm md:text-base text-white/90 leading-relaxed font-sans">
-                    {cardsData[2].desc}
-                  </p>
-                </div>
-              </div>
-            </div>
-
+            {renderCard(cardsData[1])}
+            {renderCard(cardsData[2])}
           </div>
           
         </div>
@@ -233,4 +169,5 @@ const SuccessCase = () => {
 };
 
 export default SuccessCase;
+
 
