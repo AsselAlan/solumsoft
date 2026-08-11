@@ -172,10 +172,10 @@ const Ledger = () => {
             </div>
 
             {/* Container Principal del Dashboard */}
-            <div className="w-full bg-[#13151B] rounded-2xl border border-platinum/15 shadow-[0_20px_50px_rgba(0,0,0,0.8)] overflow-hidden relative">
+            <div className="w-full bg-[#0E0E10] rounded-2xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.9)] overflow-hidden relative">
               
               {/* Header Top Bar */}
-              <div className="bg-[#1A1D24] px-4 py-3 border-b border-platinum/10 flex items-center justify-between">
+              <div className="bg-[#141416] px-4 py-3 border-b border-white/10 flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className="w-7 h-7 rounded-lg bg-flame flex items-center justify-center text-white font-black font-heading text-xs">
                     S
@@ -198,9 +198,9 @@ const Ledger = () => {
               <div className="grid grid-cols-12 min-h-[500px]">
                 
                 {/* Mini Sidebar */}
-                <div className="hidden sm:flex sm:col-span-3 bg-[#16181E] border-r border-platinum/10 p-3 flex-col justify-between font-mono text-xs">
+                <div className="hidden sm:flex sm:col-span-3 bg-[#121214] border-r border-white/10 p-3 flex-col justify-between font-mono text-xs">
                   <div className="space-y-1">
-                    <button className="w-full text-left px-3 py-2 rounded-lg bg-platinum/10 text-white font-semibold flex items-center gap-2.5">
+                    <button className="w-full text-left px-3 py-2 rounded-lg bg-white/10 text-white font-semibold flex items-center gap-2.5">
                       <LayoutDashboard className="w-4 h-4 text-technical-blue" />
                       Resumen
                     </button>
@@ -218,7 +218,7 @@ const Ledger = () => {
                     </button>
                   </div>
 
-                  <div className="pt-3 border-t border-platinum/10">
+                  <div className="pt-3 border-t border-white/10">
                     <button className="w-full text-left px-3 py-2 rounded-lg text-platinum/50 hover:text-platinum hover:bg-white/5 transition-colors flex items-center gap-2.5">
                       <Settings className="w-4 h-4" />
                       Configuración
@@ -227,7 +227,7 @@ const Ledger = () => {
                 </div>
 
                 {/* Dashboard Center & Chat Area */}
-                <div className="col-span-12 sm:col-span-9 p-4 md:p-5 flex flex-col justify-between space-y-4">
+                <div className="col-span-12 sm:col-span-9 p-4 md:p-5 flex flex-col justify-between space-y-4 bg-[#09090A]">
                   
                   {/* Title & Stats */}
                   <div>
@@ -235,7 +235,7 @@ const Ledger = () => {
                     
                     {/* Stats Grid */}
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5">
-                      <div className="bg-[#1A1D25] p-2.5 rounded-xl border border-platinum/5">
+                      <div className="bg-[#161618] p-2.5 rounded-xl border border-white/10">
                         <div className="text-platinum/50 font-mono text-[10px]">Documentos</div>
                         <div className="text-white font-mono font-bold text-base mt-0.5">1,248</div>
                         <div className="text-technical-blue font-mono text-[9px] mt-0.5 flex items-center gap-1">
@@ -243,7 +243,7 @@ const Ledger = () => {
                         </div>
                       </div>
 
-                      <div className="bg-[#1A1D25] p-2.5 rounded-xl border border-platinum/5">
+                      <div className="bg-[#161618] p-2.5 rounded-xl border border-white/10">
                         <div className="text-platinum/50 font-mono text-[10px]">Consultas IA</div>
                         <div className="text-white font-mono font-bold text-base mt-0.5">532</div>
                         <div className="text-technical-blue font-mono text-[9px] mt-0.5 flex items-center gap-1">
@@ -251,7 +251,7 @@ const Ledger = () => {
                         </div>
                       </div>
 
-                      <div className="bg-[#1A1D25] p-2.5 rounded-xl border border-platinum/5">
+                      <div className="bg-[#161618] p-2.5 rounded-xl border border-white/10">
                         <div className="text-platinum/50 font-mono text-[10px]">Respuestas generadas</div>
                         <div className="text-white font-mono font-bold text-base mt-0.5">932</div>
                         <div className="text-technical-blue font-mono text-[9px] mt-0.5 flex items-center gap-1">
@@ -259,7 +259,7 @@ const Ledger = () => {
                         </div>
                       </div>
 
-                      <div className="bg-[#1A1D25] p-2.5 rounded-xl border border-platinum/5">
+                      <div className="bg-[#161618] p-2.5 rounded-xl border border-white/10">
                         <div className="text-platinum/50 font-mono text-[10px]">Precisión promedio</div>
                         <div className="text-white font-mono font-bold text-base mt-0.5">94%</div>
                         <div className="text-technical-blue font-mono text-[9px] mt-0.5 flex items-center gap-1">
@@ -273,7 +273,7 @@ const Ledger = () => {
                   <div className="grid grid-cols-1 md:grid-cols-12 gap-3 items-stretch">
                     
                     {/* Fuentes Conectadas Column */}
-                    <div className="md:col-span-5 bg-[#181B22] p-3 rounded-xl border border-platinum/10 flex flex-col justify-between">
+                    <div className="md:col-span-5 bg-[#161618] p-3 rounded-xl border border-white/10 flex flex-col justify-between">
                       <div>
                         <div className="text-platinum/70 font-heading font-semibold text-xs mb-3 flex items-center gap-1.5">
                           <HardDrive className="w-3.5 h-3.5 text-technical-blue" />
@@ -281,7 +281,7 @@ const Ledger = () => {
                         </div>
 
                         <div className="space-y-2 font-mono text-xs">
-                          <div className="flex items-center justify-between p-2 rounded-lg bg-onyx/50 border border-platinum/5">
+                          <div className="flex items-center justify-between p-2 rounded-lg bg-[#101012] border border-white/5">
                             <div className="flex items-center gap-2">
                               <div className="w-6 h-6 rounded bg-flame/15 flex items-center justify-center text-flame text-[10px]">
                                 🗄️
@@ -294,7 +294,7 @@ const Ledger = () => {
                             <span className="text-platinum/40 text-[10px]">15 tablas</span>
                           </div>
 
-                          <div className="flex items-center justify-between p-2 rounded-lg bg-onyx/50 border border-platinum/5">
+                          <div className="flex items-center justify-between p-2 rounded-lg bg-[#101012] border border-white/5">
                             <div className="flex items-center gap-2">
                               <div className="w-6 h-6 rounded bg-blue-500/15 flex items-center justify-center text-blue-400 text-[10px]">
                                 📁
@@ -307,9 +307,9 @@ const Ledger = () => {
                             <span className="text-platinum/40 text-[10px]">342 docs</span>
                           </div>
 
-                          <div className="flex items-center justify-between p-2 rounded-lg bg-onyx/50 border border-platinum/5">
+                          <div className="flex items-center justify-between p-2 rounded-lg bg-[#101012] border border-white/5">
                             <div className="flex items-center gap-2">
-                              <div className="w-6 h-6 rounded bg-platinum/15 flex items-center justify-center text-white text-[10px]">
+                              <div className="w-6 h-6 rounded bg-white/15 flex items-center justify-center text-white text-[10px]">
                                 📝
                               </div>
                               <div>
@@ -320,7 +320,7 @@ const Ledger = () => {
                             <span className="text-platinum/40 text-[10px]">128 páginas</span>
                           </div>
 
-                          <div className="flex items-center justify-between p-2 rounded-lg bg-onyx/50 border border-platinum/5">
+                          <div className="flex items-center justify-between p-2 rounded-lg bg-[#101012] border border-white/5">
                             <div className="flex items-center gap-2">
                               <div className="w-6 h-6 rounded bg-red-500/15 flex items-center justify-center text-red-400 text-[10px]">
                                 📑
@@ -336,7 +336,7 @@ const Ledger = () => {
                       </div>
 
                       {/* Botones de Presets Rápido */}
-                      <div className="mt-3 pt-2 border-t border-platinum/10">
+                      <div className="mt-3 pt-2 border-t border-white/10">
                         <div className="text-platinum/40 text-[9px] font-mono mb-1.5 uppercase">Preguntas de prueba:</div>
                         <div className="space-y-1">
                           {presetQAs.map((item, idx) => (
@@ -357,10 +357,10 @@ const Ledger = () => {
                     </div>
 
                     {/* Chat Widget Column ("Asistente IA") */}
-                    <div className="md:col-span-7 bg-[#1A1D26] p-3.5 rounded-xl border border-technical-blue/30 shadow-[0_0_20px_rgba(0,204,255,0.08)] flex flex-col justify-between">
+                    <div className="md:col-span-7 bg-[#161618] p-3.5 rounded-xl border border-white/10 flex flex-col justify-between">
                       
                       {/* Widget Header */}
-                      <div className="flex items-center justify-between border-b border-platinum/10 pb-2.5 mb-3">
+                      <div className="flex items-center justify-between border-b border-white/10 pb-2.5 mb-3">
                         <div className="flex items-center gap-2">
                           <div className="w-6 h-6 rounded-md bg-technical-blue/20 flex items-center justify-center text-technical-blue">
                             <Bot className="w-3.5 h-3.5" />
@@ -378,14 +378,14 @@ const Ledger = () => {
                         
                         {/* User Bubble */}
                         <div className="flex justify-end">
-                          <div className="max-w-[90%] bg-[#36231A] border border-flame/40 p-2.5 rounded-xl rounded-tr-none text-white text-[11px] leading-relaxed">
+                          <div className="max-w-[90%] bg-[#281810] border border-flame/40 p-2.5 rounded-xl rounded-tr-none text-white text-[11px] leading-relaxed">
                             {currentQA.question}
                           </div>
                         </div>
 
                         {/* AI Bubble */}
                         <div className="flex justify-start">
-                          <div className="max-w-[95%] bg-[#222733] border border-platinum/10 p-3 rounded-xl rounded-tl-none text-platinum/90 text-[11px] leading-relaxed space-y-2">
+                          <div className="max-w-[95%] bg-[#222226] border border-white/10 p-3 rounded-xl rounded-tl-none text-platinum/90 text-[11px] leading-relaxed space-y-2">
                             {isTyping ? (
                               <div className="flex items-center gap-1.5 text-technical-blue py-1">
                                 <span className="w-1.5 h-1.5 bg-technical-blue rounded-full animate-bounce"></span>
@@ -424,7 +424,7 @@ const Ledger = () => {
                           value={inputVal}
                           onChange={(e) => setInputVal(e.target.value)}
                           placeholder="Escribí tu pregunta..."
-                          className="w-full bg-[#12141A] text-white placeholder-platinum/40 font-mono text-xs px-3 py-2.5 pr-10 rounded-lg border border-platinum/15 focus:outline-none focus:border-flame transition-colors"
+                          className="w-full bg-[#101012] text-white placeholder-platinum/40 font-mono text-xs px-3 py-2.5 pr-10 rounded-lg border border-white/15 focus:outline-none focus:border-flame transition-colors"
                         />
                         <button
                           type="submit"
