@@ -98,7 +98,7 @@ const SuccessCase = () => {
           }`}
         >
           {/* CARA FRONTAL: Icono central celeste */}
-          <div className="absolute inset-0 w-full h-full bg-black p-6 md:p-8 border border-technical-blue/30 shadow-[6px_6px_0px_0px_rgba(0,204,255,0.2)] rounded-2xl flex flex-col items-center justify-center text-center [backface-visibility:hidden] group-hover:border-technical-blue transition-colors">
+          <div className="absolute inset-0 w-full h-full bg-onyx p-6 md:p-8 border border-technical-blue/30 shadow-[6px_6px_0px_0px_rgba(0,204,255,0.2)] rounded-2xl flex flex-col items-center justify-center text-center [backface-visibility:hidden] group-hover:border-technical-blue transition-colors">
             <span className="text-[10px] font-mono text-technical-blue tracking-widest uppercase mb-4">
               {card.category}
             </span>
@@ -108,10 +108,14 @@ const SuccessCase = () => {
             <h3 className="text-xl md:text-2xl font-black text-platinum uppercase tracking-tighter font-heading">
               {card.titleNode}
             </h3>
+            <div className="text-[10px] font-mono text-platinum/40 mt-4 flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-technical-blue animate-pulse"></span>
+              HOVER PARA VER ICONO
+            </div>
           </div>
 
-          {/* CARA TRASERA: Texto explicativo Total Black */}
-          <div className="absolute inset-0 w-full h-full bg-black p-6 md:p-8 border border-technical-blue/50 shadow-[6px_6px_0px_0px_rgba(0,204,255,0.3)] rounded-2xl flex flex-col justify-center [backface-visibility:hidden] [transform:rotateY(180deg)]">
+          {/* CARA TRASERA: Texto explicativo */}
+          <div className="absolute inset-0 w-full h-full bg-[#12141A] p-6 md:p-8 border border-technical-blue/50 shadow-[6px_6px_0px_0px_rgba(0,204,255,0.3)] rounded-2xl flex flex-col justify-center [backface-visibility:hidden] [transform:rotateY(180deg)]">
             <h3 className="text-xl md:text-2xl font-black text-platinum uppercase tracking-tighter leading-tight mb-3 font-heading">
               {card.titleNode}
             </h3>
