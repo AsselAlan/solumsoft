@@ -90,7 +90,7 @@ const SuccessCase = () => {
         onClick={() => toggleCard(card.id)}
         onMouseEnter={() => setHoveredCard(card.id)}
         onMouseLeave={() => setHoveredCard(null)}
-        className="relative w-full min-h-[420px] md:min-h-[390px] cursor-pointer [perspective:1000px] reveal-up group"
+        className="relative w-full h-[340px] md:h-[350px] cursor-pointer [perspective:1000px] reveal-up group"
       >
         <div 
           className={`w-full h-full relative transition-transform duration-1000 [transform-style:preserve-3d] ${
@@ -99,24 +99,24 @@ const SuccessCase = () => {
         >
           {/* CARA FRONTAL: Icono central celeste */}
           <div className="absolute inset-0 w-full h-full bg-onyx p-6 md:p-8 border border-technical-blue/30 shadow-[6px_6px_0px_0px_rgba(0,204,255,0.2)] rounded-2xl flex flex-col items-center justify-center text-center [backface-visibility:hidden] group-hover:border-technical-blue transition-colors">
-            <span className="text-[10px] font-mono text-technical-blue tracking-widest uppercase mb-6">
+            <span className="text-[10px] font-mono text-technical-blue tracking-widest uppercase mb-4">
               {card.category}
             </span>
-            <div className="w-20 h-20 rounded-2xl bg-technical-blue/10 border border-technical-blue/40 flex items-center justify-center shadow-[0_0_30px_rgba(0,204,255,0.25)] mb-6 group-hover:scale-110 transition-transform duration-500">
+            <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-technical-blue/10 border border-technical-blue/40 flex items-center justify-center shadow-[0_0_30px_rgba(0,204,255,0.25)] mb-4 group-hover:scale-110 transition-transform duration-500">
               {card.icon}
             </div>
-            <h3 className="text-2xl font-black text-platinum uppercase tracking-tighter font-heading">
+            <h3 className="text-xl md:text-2xl font-black text-platinum uppercase tracking-tighter font-heading">
               {card.titleNode}
             </h3>
             <div className="text-[10px] font-mono text-platinum/40 mt-4 flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-technical-blue animate-pulse"></span>
-              HOVER / CLICK PARA ICONO O TEXTO
+              HOVER PARA VER ICONO
             </div>
           </div>
 
           {/* CARA TRASERA: Texto explicativo */}
-          <div className="absolute inset-0 w-full h-full bg-[#12141A] p-6 md:p-8 border border-technical-blue/50 shadow-[6px_6px_0px_0px_rgba(0,204,255,0.3)] rounded-2xl flex flex-col justify-center overflow-y-auto [backface-visibility:hidden] [transform:rotateY(180deg)]">
-            <h3 className="text-xl md:text-2xl font-black text-platinum uppercase tracking-tighter leading-tight mb-4 font-heading">
+          <div className="absolute inset-0 w-full h-full bg-[#12141A] p-6 md:p-8 border border-technical-blue/50 shadow-[6px_6px_0px_0px_rgba(0,204,255,0.3)] rounded-2xl flex flex-col justify-center [backface-visibility:hidden] [transform:rotateY(180deg)]">
+            <h3 className="text-xl md:text-2xl font-black text-platinum uppercase tracking-tighter leading-tight mb-3 font-heading">
               {card.titleNode}
             </h3>
             <p className="text-xs md:text-sm text-white/90 leading-relaxed font-sans">
