@@ -30,70 +30,88 @@ function App() {
     gsap.ticker.lagSmoothing(0);
 
     const ctx = gsap.context(() => {
-      // 1. Coreografía Secuencial de Secciones (Título primero, luego tarjetas/ventanas)
-      const sections = document.querySelectorAll('section');
+      // 1. Coreografía Secuencial de Secciones (Salvo Hero que se anima al montar)
+      const sections = document.querySelectorAll('section:not(#hero)');
       
       sections.forEach((section) => {
-        const storyHeaders = section.querySelectorAll('.story-header, .reveal-up-header');
-        const storyCards = section.querySelectorAll('.story-card, .reveal-up-card, .solum-card, .blueprint-card');
+        const storyHeaders = section.querySelectorAll('.story-header');
+        const storyCards = section.querySelectorAll('.story-card');
 
-        // Secuencia Timeline por sección
+        // Secuencia Timeline por sección (se ejecuta una sola vez de forma robusta)
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: section,
-            start: "top 82%",
-            toggleActions: "play none none reverse"
+            start: "top 85%",
+            once: true
           }
         });
 
         // Títulos / Cabeceras aparecen primero
         if (storyHeaders.length > 0) {
-          tl.from(storyHeaders, {
-            y: 40,
-            opacity: 0,
-            duration: 0.9,
-            stagger: 0.15,
-            ease: "power3.out"
-          });
+          tl.fromTo(storyHeaders, 
+            { y: 35, opacity: 0 }, 
+            {
+              y: 0,
+              opacity: 1,
+              duration: 0.8,
+              stagger: 0.12,
+              ease: "power3.out font-heading",
+              clearProps: "transform"
+            }
+          );
         }
 
         // Ventanas y Tarjetas aparecen en cascada después de los títulos
         if (storyCards.length > 0) {
-          tl.from(storyCards, {
-            y: 50,
-            opacity: 0,
-            scale: 0.96,
-            duration: 1,
-            stagger: 0.12,
-            ease: "expo.out"
-          }, "-=0.4");
+          tl.fromTo(storyCards, 
+            { y: 40, opacity: 0, scale: 0.98 }, 
+            {
+              y: 0,
+              opacity: 1,
+              scale: 1,
+              duration: 0.9,
+              stagger: 0.1,
+              ease: "power3.out",
+              clearProps: "transform"
+            }, 
+            "-=0.4"
+          );
         }
       });
 
       // 2. Global fallback para elementos .reveal-up tradicionales
       gsap.utils.toArray('.reveal-up:not(.story-header):not(.story-card)').forEach((el: any) => {
-        gsap.from(el, {
-          scrollTrigger: {
-            trigger: el,
-            start: "top 88%",
-          },
-          y: 40,
-          opacity: 0,
-          duration: 1,
-          ease: "power3.out"
-        });
+        gsap.fromTo(el, 
+          { y: 35, opacity: 0 }, 
+          {
+            scrollTrigger: {
+              trigger: el,
+              start: "top 90%",
+              once: true
+            },
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power3.out",
+            clearProps: "transform"
+          }
+        );
       });
 
       // 3. Staggered Reveal para filas del Ledger
       gsap.utils.toArray('.ledger-row').forEach((row: any, i: number) => {
-        gsap.from(row, {
-          scrollTrigger: { trigger: row, start: "top 92%" },
-          opacity: 0,
-          y: 35,
-          duration: 1.2,
-          ease: "power4.out",
-          delay: i * 0.15
-        });
+        gsap.fromTo(row, 
+          { y: 30, opacity: 0 }, 
+          {
+            scrollTrigger: { trigger: row, start: "top 95%", once: true },
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power3.out",
+            delay: i * 0.1,
+            clearProps: "transform"
+          }
+        );
       });
 
       // 4. Parallax sutiles para elementos flotantes

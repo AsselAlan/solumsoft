@@ -49,11 +49,14 @@ const Hero = () => {
           ease: "power1.inOut"
         });
 
-    tl.to(".hero-reveal", {
+    gsap.fromTo(".hero-reveal", {
+      opacity: 0,
+      y: 20
+    }, {
       opacity: 1,
       y: 0,
       duration: 1,
-      stagger: 0.2,
+      stagger: 0.15,
       ease: "power3.out"
     });
   }, []);
@@ -103,7 +106,7 @@ const Hero = () => {
             <LogoMarcaIcon className="h-20 md:h-32 w-auto object-contain drop-shadow-[0_0_20px_rgba(255,79,0,0.3)]" />
           </div>
 
-          <div className="opacity-0 translate-y-4 hero-reveal">
+          <div className="hero-reveal">
             <p className="text-white/95 text-base md:text-lg max-w-2xl mb-10 leading-relaxed border-l-2 border-flame pl-6">
               Diseñamos y desarrollamos software que potencian tu empresa. Nos adaptamos por completo a tus procesos.<br /><br />
               Nacimos en Argentina para ayudar a negocios locales a crecer con herramientas tecnológicas simples, inteligentes y confiables.
