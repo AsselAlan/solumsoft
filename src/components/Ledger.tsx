@@ -82,8 +82,8 @@ const Ledger = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Columna Izquierda: Contenido y Beneficios */}
-          <div className="lg:col-span-5 flex flex-col justify-center reveal-up">
+          {/* Columna Izquierda: Contenido y Beneficios (Aparece primero como título de historia) */}
+          <div className="lg:col-span-5 flex flex-col justify-center story-header">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-technical-blue/10 border border-technical-blue/30 text-technical-blue font-mono font-bold tracking-widest text-xs uppercase mb-4 w-fit">
               <span className="w-2 h-2 rounded-full bg-technical-blue animate-pulse"></span>
               IA QUE ENTIENDE TU NEGOCIO
@@ -146,8 +146,8 @@ const Ledger = () => {
             </div>
           </div>
 
-          {/* Columna Derecha: Dashboard Maqueta Interactiva de IA */}
-          <div className="lg:col-span-7 relative reveal-up">
+          {/* Columna Derecha: Dashboard Maqueta Interactiva de IA (Aparece como ventana interactiva) */}
+          <div className="lg:col-span-7 relative story-card">
             
             {/* SVG Connecting Lines (Decorativas en pantalla grande) */}
             <svg className="hidden md:block absolute -top-12 left-16 w-48 h-20 pointer-events-none z-20 overflow-visible">

@@ -74,21 +74,14 @@ Soporte técnico directo por WhatsApp.
 
 Este modelo de suscripción genera un MRR (Ingreso Recurrente Mensual) que incrementa exponencialmente el valor de Solum Software a medida que sumamos clientes.
 
-7. Estrategia de Conversión: El Embudo Directo a WhatsApp
+8. Efectos Visuales Avanzados y Coreografía de Scroll (Narrativa en Cascada)
 
-El sitio web de Solum SF está diseñado bajo la premisa de Foco Único de Conversión. Evitamos menús corporativos distractores.
-
-Visita la Web ➔ Entiende la Propuesta de Valor ➔ Ve el Caso de Éxito Visual ➔ Clic en CTA (WhatsApp)
-
-
-
-Dale un diseño moderno tecnologico, pero simple y minimalista que se entienda bien el concepto y que sea un exelente envudo de llamado a la accion. 
-
-
-
-usa colores como: naranja azules 
-
-dale un estilo dark 
-
-usa y basate en este logo  
+- **Coreografía Secuencial por Sección (GSAP ScrollTrigger)**:
+  - Al hacer scroll, cada sección se carga siguiendo un orden narrativo estricto: **primero los Títulos/Cabeceras (`.story-header`)**, e inmediatamente después **las Ventanas / Tarjetas / Módulos (`.story-card`)** en un stagger fluido de 0.12s.
+- **Mejoras en Componentes**:
+  - **Hero & Consola Terminal**: Resplandor cibernético en la consola, indicadores LED de CPU/latencia, superposición sutil de líneas de escaneo (scanlines) y badge interactivo `solum_terminal_v4.0.0-industrial`.
+  - **Módulo de Logística y Stock (`TechStack`)**: Tarjetas de métricas con bordes neón que responden al hover, estado de auditoría en vivo y botón con simulación de procesamiento.
+  - **Cerebro IA RAG (`Ledger`)**: Dashboard interactivo con fuentes conectadas, interfaz de preguntas predefinidas y simulador de respuestas con asistente de IA.
+  - **Cuadrantes & Metodología (`Quadrants`)**: Tarjetas con estética glassmorphic, micro-indicadores cibernéticos y efecto de texto desordenado (text scramble) en hover.
+  - **Navbar Lateral (`Sidebar`)**: Indicadores de sección neón con resplandor cyan (`#00ccff`), tooltips flotantes en hover y botón de WhatsApp con pulso de actividad verde en tiempo real.
 

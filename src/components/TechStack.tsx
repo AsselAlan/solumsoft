@@ -53,16 +53,16 @@ const TechStack = () => {
     <section className="solum-demo-wrapper px-4 md:px-24" id="tech-stack">
       <div className="solum-demo-section">
         
-        {/* Contenido Explicativo */}
-        <div className="solum-copy fade-in-up">
+        {/* Contenido Explicativo (Aparece primero) */}
+        <div className="solum-copy story-header">
           <span className="solum-badge">Simplicidad Extrema</span>
           <h2 className="uppercase">TECNOLOGÍA ADAPTADA A TU <span>NEGOCIO</span></h2>
           <p>No todos los negocios necesitan un sistema enorme ni procesos innecesarios.</p>
           <p>Desarrollamos herramientas a medida, enfocadas en lo que realmente necesita tu operación.</p>
         </div>
 
-        {/* Panel Interactivo */}
-        <div className="solum-panel-wrapper fade-in-up delay-1">
+        {/* Panel Interactivo Ventana Módulo (Aparece en secuencia después del título) */}
+        <div className="solum-panel-wrapper story-card">
           <div className={`solum-panel ${status === 'PROCESSING' ? 'processing' : ''}`} id="demoPanel">
             <div className="scan-line"></div>
             

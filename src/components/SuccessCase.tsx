@@ -132,7 +132,9 @@ const SuccessCase = () => {
     <section ref={sectionRef} className="py-24 md:py-32 relative overflow-hidden" id="success-case">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
         
-        <div className="text-center mb-16 md:mb-24 reveal-up">
+        {/* Cabecera del Caso de Éxito / Razones (Aparece primero en la historia) */}
+        <div className="text-center mb-16 md:mb-24 story-header">
+          <div className="text-technical-blue text-xs font-mono font-bold tracking-[0.4em] uppercase mb-3">// VALORES_FUNDAMENTALES</div>
           <h2 className="text-5xl md:text-6xl font-black text-platinum uppercase tracking-tighter font-heading">
             Por qué elegir <span className="text-flame">Solum Soft</span>
           </h2>
@@ -141,13 +143,13 @@ const SuccessCase = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12 items-center">
           
           {/* Columna Izquierda (Card 1) */}
-          <div className="flex flex-col gap-8 order-2 lg:order-1">
+          <div className="flex flex-col gap-8 order-2 lg:order-1 story-card">
             {renderCard(cardsData[0])}
           </div>
 
-          {/* Columna Central - Imagen Stand */}
-          <div className="relative group order-1 lg:order-2 flex justify-center reveal-up">
-            <div className="relative aspect-[3/4] w-full max-w-sm overflow-hidden rounded-2xl border border-platinum/15 shadow-2xl">
+          {/* Columna Central - Imagen Stand (Aparece en la secuencia de tarjetas) */}
+          <div className="relative group order-1 lg:order-2 flex justify-center story-card">
+            <div className="relative aspect-[3/4] w-full max-w-sm overflow-hidden rounded-2xl border border-technical-blue/30 shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_30px_rgba(0,204,255,0.15)] group-hover:border-technical-blue transition-all duration-500">
               <img 
                 src={standImage}
                 alt="Solum Soft Approach" 
@@ -157,7 +159,7 @@ const SuccessCase = () => {
           </div>
           
           {/* Columna Derecha (Card 2 & Card 3) */}
-          <div className="flex flex-col gap-8 order-3 lg:order-3">
+          <div className="flex flex-col gap-8 order-3 lg:order-3 story-card">
             {renderCard(cardsData[1])}
             {renderCard(cardsData[2])}
           </div>

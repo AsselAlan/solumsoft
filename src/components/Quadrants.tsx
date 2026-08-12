@@ -9,22 +9,39 @@ const quadrants = [
 
 const Quadrants = () => {
   return (
-    <section id="quadrants" className="min-h-screen grid grid-cols-1 md:grid-cols-2 grid-rows-2 border-t border-platinum/10 relative">
-      {quadrants.map((q) => (
-        <div key={q.id} className="border-r border-b border-platinum/10 p-12 md:p-24 flex flex-col justify-end group cursor-crosshair hover:bg-carbon transition-colors duration-500 relative overflow-hidden reveal-up">
-          <div className="text-[8px] text-platinum/10 absolute top-4 left-4 font-mono leading-none">
-            {q.log}<br />TIEMPO: {Math.floor(Date.now()/1000)}
+    <section id="quadrants" className="min-h-screen flex flex-col border-t border-platinum/10 relative py-20 px-6 md:px-24">
+      {/* Cabecera de Sección (Aparece primero en el scroll) */}
+      <div className="story-header mb-16">
+        <div className="text-technical-blue text-xs font-mono font-bold tracking-[0.4em] uppercase mb-3">// ARQUITECTURA_Y_METODOLOGÍA</div>
+        <h2 className="text-4xl md:text-6xl font-black text-platinum uppercase tracking-tighter font-heading">
+          TRANSFORMAMOS EL CAOS EN <span className="text-flame">ESTRUCTURA.</span>
+        </h2>
+      </div>
+
+      {/* Grid de Cuadrantes (Aparece después como ventanas/tarjetas en cascada) */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 flex-1">
+        {quadrants.map((q) => (
+          <div key={q.id} className="story-card border border-platinum/10 p-8 md:p-16 flex flex-col justify-between group cursor-crosshair hover:bg-carbon/80 transition-all duration-500 relative overflow-hidden rounded-xl bg-onyx/60 backdrop-blur-md hover:border-technical-blue/40 hover:shadow-[0_10px_30px_rgba(0,204,255,0.1)]">
+            <div className="text-[9px] text-platinum/30 font-mono leading-none flex items-center justify-between mb-8">
+              <span>{q.log}</span>
+              <span className="text-technical-blue/60">[SEGMENTO_{q.id}]</span>
+            </div>
+            <div>
+              <div className={`${q.color} text-xs mb-3 tracking-[0.3em] font-bold font-mono uppercase flex items-center gap-2`}>
+                <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse"></span>
+                FASE_{q.id}
+              </div>
+              <h3 className="text-3xl md:text-4xl text-platinum font-black uppercase tracking-tighter mb-4 scramble-trigger font-heading group-hover:text-stroke transition-all duration-300" data-scramble={q.title}>
+                {q.title}
+              </h3>
+              <p className="text-white/80 font-mono text-sm leading-relaxed max-w-md">
+                {q.desc}
+              </p>
+            </div>
+            <div className={`mt-8 h-1 w-0 group-hover:w-full transition-all duration-700 ${q.id === "01" || q.id === "04" ? 'bg-flame' : 'bg-technical-blue'}`}></div>
           </div>
-          <div className={`${q.color} text-xs mb-4 tracking-[0.3em] font-bold font-mono uppercase`}>SEGMENTO_{q.id}</div>
-          <h3 className="text-4xl md:text-5xl text-platinum font-black uppercase tracking-tighter mb-6 scramble-trigger font-heading group-hover:text-stroke transition-all duration-300" data-scramble={q.title}>
-            {q.title}
-          </h3>
-          <p className="text-white max-w-sm font-mono text-base leading-relaxed">
-            {q.desc}
-          </p>
-          <div className={`mt-8 h-1 w-0 group-hover:w-full transition-all duration-700 ${q.id === "01" || q.id === "04" ? 'bg-flame' : 'bg-technical-blue'}`}></div>
-        </div>
-      ))}
+        ))}
+      </div>
     </section>
   );
 };
