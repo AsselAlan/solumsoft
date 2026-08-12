@@ -29,6 +29,7 @@ npm install
 npm run dev
 
 # 3. Compilar para producción (cuando esté listo para deploy)
+# REGLA OBLIGATORIA: Consultar previamente al usuario antes de ejecutar 'npm run build'
 npm run build
 ```
 
