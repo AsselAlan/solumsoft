@@ -86,6 +86,7 @@ Este modelo de suscripción genera un MRR (Ingreso Recurrente Mensual) que incre
   - **Navbar Lateral (`Sidebar`)**: Indicadores de sección neón con resplandor cyan (`#00ccff`), tooltips flotantes en hover y botón de WhatsApp con pulso de actividad verde en tiempo real.
 
 ## 9. Reglas del Proyecto y Flujo de Trabajo
+- **Contacto Comercial Oficial**: WhatsApp vinculante **`+5492215735188`**.
 - **Autorización de Build**: **ANTES DE EJECUTAR `npm build` / `npm run build` DEBO CONSULTAR AL USUARIO**. Nunca se debe ejecutar la compilación de producción sin la confirmación explícita del usuario.
 - **Documentación Activa**: Mantener la documentación y el esquema actualizados con cada avance relevante.
 - **Commits**: Realizar commits con descripciones breves de los cambios al lograr progresos significativos.

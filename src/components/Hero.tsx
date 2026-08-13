@@ -113,7 +113,7 @@ const Hero = () => {
             </p>
             <div className="flex flex-wrap items-center gap-8">
               <a 
-                href="https://wa.me/5492216548471" 
+                href="https://wa.me/5492215735188?text=Hola!%20Vengo%20de%20visitar%20la%20web%20solumsoft.com%20y%20quiero%20que%20trabajemos%20juntos." 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="bg-flame text-white px-5 py-3.5 md:px-10 md:py-5 text-sm md:text-base font-black uppercase tracking-[0.15em] md:tracking-[0.2em] hover:bg-technical-blue hover:text-onyx hover:shadow-[0_0_30px_rgba(0,204,255,0.6)] transition-all duration-300 flex items-center gap-3 md:gap-4 group w-fit rounded-lg"

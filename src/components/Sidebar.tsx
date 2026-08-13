@@ -48,7 +48,7 @@ const Sidebar = () => {
           <i className="ti ti-brand-linkedin text-2xl"></i>
         </a>
         <a 
-          href="https://wa.me/5492223674061?text=Hola!%20Vengo%20de%20visitar%20la%20web%20solumsoft.com%20y%20quiero%20que%20trabajemos%20juntos." 
+          href="https://wa.me/5492215735188?text=Hola!%20Vengo%20de%20visitar%20la%20web%20solumsoft.com%20y%20quiero%20que%20trabajemos%20juntos." 
           target="_blank" 
           rel="noopener noreferrer"
           className="w-12 h-12 mt-2 rounded-full bg-flame flex items-center justify-center text-white shadow-[0_0_25px_rgba(255,79,0,0.6)] hover:scale-110 hover:bg-technical-blue hover:shadow-[0_0_25px_rgba(0,204,255,0.8)] transition-all duration-300 relative group"

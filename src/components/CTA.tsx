@@ -20,7 +20,7 @@ const CTA = () => {
         
         <div className="w-full md:w-auto story-card">
           <a 
-            href="https://wa.me/5492223674061?text=Hola!%20Vengo%20de%20visitar%20la%20web%20solumsoft.com%20y%20quiero%20que%20trabajemos%20juntos." 
+            href="https://wa.me/5492215735188?text=Hola!%20Vengo%20de%20visitar%20la%20web%20solumsoft.com%20y%20quiero%20que%20trabajemos%20juntos." 
             target="_blank"
             rel="noopener noreferrer"
             className="block bg-flame text-white px-10 py-8 text-2xl font-black uppercase tracking-tighter hover:bg-technical-blue hover:text-onyx hover:shadow-[0_0_40px_rgba(0,204,255,0.7)] transition-all duration-300 transform hover:-translate-y-2 brutalist-border border-white/10 shadow-[15px_15px_0px_0px_rgba(0,204,255,0.3)] font-heading group rounded-xl"
